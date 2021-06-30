@@ -36,6 +36,8 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/react-test-renderer": "^17.0.1",
     "babel-jest": "^27.0.6",
     "babel-preset-gatsby": "^1.8.0",
     "identity-obj-proxy": "^3.0.0",
