@@ -12,7 +12,10 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "test": "jest",
+    "test:update-snapshots": "jest -u",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -31,5 +34,14 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/react-test-renderer": "^17.0.1",
+    "babel-jest": "^27.0.6",
+    "babel-preset-gatsby": "^1.8.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.0.6",
+    "react-test-renderer": "^17.0.2"
   }
 }

@@ -1,6 +1,9 @@
+const siteUrl = process.env.URL || `https://ourfuturedomain.com`
+
 module.exports = {
   siteMetadata: {
     title: "ML Handbook",
+    siteUrl,
   },
   plugins: [
     "gatsby-plugin-postcss",
