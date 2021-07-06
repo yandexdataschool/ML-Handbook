@@ -8,7 +8,7 @@
         "ignore": ["empty-lines"]
       }
     ],
-    "no-extra-semicolons": "true",
+    "no-extra-semicolons": true,
     "function-name-case": "lower",
     "max-empty-lines": 2
   }
