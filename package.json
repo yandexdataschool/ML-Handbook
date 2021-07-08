@@ -17,7 +17,9 @@
     "lint:fix": "eslint --fix src --ext .ts,.tsx,.js,.jsx",
     "test": "jest",
     "test:update-snapshots": "jest -u",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "lint:css": "stylelint 'src/**/*{.css,.tsx,.js}'",
+    "lint:css:fix": "stylelint '**/*{.css,.tsx,.js}' --fix"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -56,6 +58,9 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.6",
-    "react-test-renderer": "^17.0.2"
+    "react-test-renderer": "^17.0.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-processor-html": "^1.0.0"
   }
 }
