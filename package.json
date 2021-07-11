@@ -27,7 +27,7 @@
     "gatsby": "^3.6.2",
     "gatsby-plugin-image": "^1.8.0",
     "gatsby-plugin-manifest": "^3.8.0",
-    "gatsby-plugin-mdx": "^2.8.0",
+    "gatsby-plugin-mdx": "^2.9.0",
     "gatsby-plugin-postcss": "^4.8.0",
     "gatsby-plugin-prettier-eslint": "^1.0.6",
     "gatsby-plugin-react-helmet": "^4.8.0",
