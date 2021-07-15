@@ -1,0 +1,7 @@
+node_modules
+__mocks__
+loadershim.js
+gatsby-config.js
+jest-preprocess.js
+jest.config.js
+.eslintrc.js
