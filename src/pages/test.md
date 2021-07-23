@@ -1,4 +1,4 @@
-# Hello, *world*!
+# Hello, _world_!
 
 Below is an example of JSX embedded in Markdown. <br /> **Try and change
 the background color!**
