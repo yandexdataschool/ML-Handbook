@@ -62,5 +62,6 @@ module.exports = {
         extensions: ['.mdx', '.md'],
       },
     },
+    'gatsby-plugin-linaria',
   ],
 };
