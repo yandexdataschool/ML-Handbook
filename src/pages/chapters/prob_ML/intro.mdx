@@ -329,21 +329,21 @@ $$p(y \vert \theta, \phi) = \exp\left(\frac{y\theta - a(\theta)}{\phi} + b(y, \p
   <summary markdown="span">Доказательство</summary>
   Заметим, что
 
-$$\exp\left(\frac{y\theta - a(\theta)}{\phi} + b(y, \phi)\right) = \frac{\exp\left(\frac{y\theta}{\phi} + b(y, \phi)\right)}{\exp\left(\frac{a(\theta)}{\phi}\right)},$$
+    $$\exp\left(\frac{y\theta - a(\theta)}{\phi} + b(y, \phi)\right) = \frac{\exp\left(\frac{y\theta}{\phi} + b(y, \phi)\right)}{\exp\left(\frac{a(\theta)}{\phi}\right)},$$
 
-откуда
+    откуда
 
-$$\exp\left(\frac{a(\theta)}{\phi}\right) = \int\exp\left(\frac{y\theta}{\phi} + b(y, \phi)\right)dy$$
+    $$\exp\left(\frac{a(\theta)}{\phi}\right) = \int\exp\left(\frac{y\theta}{\phi} + b(y, \phi)\right)dy$$
 
-Следовательно,
+    Следовательно,
 
-$$a(\theta) = \phi\log\int\exp\left(\frac{y\theta}{\phi} + b(y, \phi)\right)dy$$
+    $$a(\theta) = \phi\log\int\exp\left(\frac{y\theta}{\phi} + b(y, \phi)\right)dy$$
 
-Дифференцируя, получаем
+    Дифференцируя, получаем
 
-$$a'(\theta) = \frac{\phi}{\int\exp\left(\frac{y\theta}{\phi} + b(y, \phi)\right)dy}\cdot\int\frac{\partial}{\partial\theta}\,\exp\left(\frac{y\theta}{\phi} + b(y, \phi)\right)dy=$$
+    $$a'(\theta) = \frac{\phi}{\int\exp\left(\frac{y\theta}{\phi} + b(y, \phi)\right)dy}\cdot\int\frac{\partial}{\partial\theta}\,\exp\left(\frac{y\theta}{\phi} + b(y, \phi)\right)dy=$$
 
-$$=\frac{\phi}{\exp\left(\frac{a(\theta)}{\phi}\right)}\int \frac{y}{\phi}\cdot\exp\left(\frac{y\theta}{\phi} + b(y, \phi)\right)dy=\int{p(y\vert\theta,\phi)y dy} = \mathbb{E}p(y\vert\theta,\phi)$$
+    $$=\frac{\phi}{\exp\left(\frac{a(\theta)}{\phi}\right)}\int \frac{y}{\phi}\cdot\exp\left(\frac{y\theta}{\phi} + b(y, \phi)\right)dy=\int{p(y\vert\theta,\phi)y dy} = \mathbb{E}p(y\vert\theta,\phi)$$
 
 что и завершает доказательство.
 >>>>>>> chore: added prob_ML (part)
