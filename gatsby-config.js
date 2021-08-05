@@ -63,6 +63,5 @@ module.exports = {
         remarkPlugins: [require("remark-math")],
       },
     },
-    'gatsby-plugin-linaria',
   ],
 };
