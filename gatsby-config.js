@@ -78,6 +78,5 @@ module.exports = {
         defer: false,
       },
     },
-    'gatsby-plugin-linaria',
   ],
 };
