@@ -78,5 +78,6 @@ module.exports = {
         defer: false,
       },
     },
+    `gatsby-plugin-styled-components`,
   ],
 };
