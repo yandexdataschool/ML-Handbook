@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const LayoutStyled = styled.div`
+export const Main = styled.main`
   margin: 0 auto;
   background-color: #fff;
   color: rgba(51, 51, 102, 1);
@@ -11,5 +11,3 @@ const LayoutStyled = styled.div`
   font-size: 22px;
   line-height: 28px;
 `;
-
-export default LayoutStyled;

@@ -1,17 +1,17 @@
 import React from 'react';
 
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+import { Header } from '../Header/Header';
+import { Footer } from '../Footer/Footer';
 
-import LayoutStyled from './Layout.styles';
+import * as Styles from './Layout.styles';
 
 const Layout = ({ children }) => {
   return (
-    <LayoutStyled>
+    <>
       <Header />
-      <section>{children}</section>
+      <Styles.Main>{children}</Styles.Main>
       <Footer />
-    </LayoutStyled>
+    </>
   );
 };
 
