@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeaderStyles = styled.header`
+export const Header = styled.header`
   margin-top: 0;
   margin-bottom: 0;
   height: 100px;
