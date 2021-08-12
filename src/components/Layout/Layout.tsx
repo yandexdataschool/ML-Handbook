@@ -5,7 +5,11 @@ import { Footer } from '../Footer/Footer';
 
 import * as Styles from './Layout.styles';
 
-const Layout = ({ children }) => {
+type Props = {
+  children: React.ReactNode;
+};
+
+const Layout = ({ children }: Props) => {
   return (
     <>
       <Header />
