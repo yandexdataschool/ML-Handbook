@@ -190,6 +190,7 @@ output:
 Часто оказывается, что нейронная сеть делает "слишком уверенные предсказания": 0.9999 или 0.00001. Это становится головной болью, если в нашей разметке есть шум -- тогда градиенты на таких объектах могут сильно портить сходимость. Исследователи пришли к интересной идее: давайте предсказывать не one-hot метку, а ее сглаженный вариант. Итак, пусть у нас есть $K$ классов:
 
 <<<<<<< develop
+<<<<<<< develop
 $$
 y_{ohot}=(0, 0, \dots, 1, \dots, 0)
 $$
@@ -203,11 +204,36 @@ $$
 $$
 =======
 $$y_{ohot}=(0, 0, \dots, 1, \dots, 0)$$
+=======
+<Math block>
+>>>>>>> feat: pass formulas to Math component
 
-$$y_{ls}=\left(\frac{\varepsilon}{k-1},\frac{\varepsilon}{k-1}, \dots, 1-\varepsilon,\frac{\varepsilon}{k-1}, \dots, \frac{\varepsilon}{k-1}\right)$$
+$$
+y_{ohot}=(0, 0, \dots, 1, \dots, 0)
+$$
 
+<<<<<<< develop
 $$\sum_i y^i_{ohot}=\sum_i y^i_{ls}=1$$
 >>>>>>> chore: added and checked neural_nets
+=======
+</Math>
+
+<Math block>
+
+$$
+y_{ls}=\left(\frac{\varepsilon}{k-1},\frac{\varepsilon}{k-1}, \dots, 1-\varepsilon,\frac{\varepsilon}{k-1}, \dots, \frac{\varepsilon}{k-1}\right)
+$$
+
+</Math>
+
+<Math block>
+
+$$
+\sum_i y^i_{ohot}=\sum_i y^i_{ls}=1
+$$
+
+</Math>
+>>>>>>> feat: pass formulas to Math component
 
 Обычно берут $\epsilon=0.1$. Тем самым модель штрафуется за слишком уверенные предсказания, а шумные лейблы уже не вносят такого большого вклада в градиент.
 
