@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-export const Sidebar = styled.div`
+export const Sidebar = styled.section`
   width: 300px;
-  height: 30px;
+  height: 952px;
   color: aqua;
-  font-size: 30px;
+  font-size: 15px;
+  border: 1px solid aquamarine;
 `;
