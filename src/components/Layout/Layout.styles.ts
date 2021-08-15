@@ -10,4 +10,5 @@ export const Main = styled.main`
   font-weight: normal;
   font-size: 22px;
   line-height: 28px;
+  display: flex;
 `;
