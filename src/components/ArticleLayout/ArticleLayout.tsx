@@ -3,6 +3,7 @@ import { MDXProvider } from '@mdx-js/react';
 
 import Layout from '../Layout/Layout';
 import { Sidebar } from '../Sidebar/Sidebar';
+import { Content } from '../Content/Content';
 
 type Props = {
   children: React.ReactNode;
@@ -15,7 +16,7 @@ const ArticleLayout = ({ children }: Props) => {
     <MDXProvider components={shortcodes}>
       <Layout>
         <Sidebar>SIDEBAR</Sidebar>
-        {children}
+        <Content>{children}</Content>
       </Layout>
     </MDXProvider>
   );
