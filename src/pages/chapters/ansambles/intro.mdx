@@ -3,8 +3,6 @@ title: Ансамбли в машинном обучении
 author: pavel_gubko
 ---
 
-import Math from '../../../components/Math/Math';
-
 - Этот список будет заменен оглавлением, за вычетом заголовка "Contents",
   к которому добавлен класс `no_toc`.
   {:toc}
@@ -30,39 +28,42 @@ $$
 
 Преобразуем это выражение:
 
+<<<<<<< develop
 $$
 \mathbb{E}\left[\left(y - a\right)^2\right] = \mathbb{E}\left[y^2 + a^2 - 2ya\right] =
 $$
 
+=======
+>>>>>>> fix: use MathLayout instead Math
 $$
 \mathbb{E}\left[\left(y - a\right)^2\right] = \mathbb{E}\left[y^2 + a^2 - 2ya\right] =
 $$
-
-</Math>
 
 (раскроем матожидание по линейности, добавим и вычтем $\left(\mathbb{E}y\right)^2$ и $\left(\mathbb{E}a\right)^2$)
 
+<<<<<<< develop
 $$
 =\mathbb{E}\left[y^2\right] - \left(\mathbb{E}y\right)^2 + \left(\mathbb{E}y\right)^2 + \mathbb{E}\left[a^2\right] - \left(\mathbb{E}a\right)^2 + \left(\mathbb{E}a\right)^2 - 2\cdot\mathbb{E}\left[a\cdot(f+\varepsilon)\right]=
 $$
 
+=======
+>>>>>>> fix: use MathLayout instead Math
 $$
 =\mathbb{E}\left[y^2\right] - \left(\mathbb{E}y\right)^2 + \left(\mathbb{E}y\right)^2 + \mathbb{E}\left[a^2\right] - \left(\mathbb{E}a\right)^2 + \left(\mathbb{E}a\right)^2 - 2\cdot\mathbb{E}\left[a\cdot(f+\varepsilon)\right]=
 $$
-
-</Math>
 
 (объединим матожидание квадрата и квадрат матожидания в дисперсию; используем, что $\mathbb{E}\left[\varepsilon\right] = 0$, $\mathbb{E}\left[f\right] = f$)
 
+<<<<<<< develop
 $$
 =\mathbb{D}y + \left(\mathbb{E}y\right)^2 + \mathbb{D}a + \left(\mathbb{E}a\right)^2 - 2f\cdot\mathbb{E}a =
 $$
 
+=======
+>>>>>>> fix: use MathLayout instead Math
 $$
 =\mathbb{D}y + \left(\mathbb{E}y\right)^2 + \mathbb{D}a + \left(\mathbb{E}a\right)^2 - 2f\cdot\mathbb{E}a =
 $$
-
-</Math>
 
 (опять используем $\mathbb{E}\left[\varepsilon\right] = 0$, $\mathbb{E}\left[f\right] = f$ и линейность)
 
@@ -70,6 +71,7 @@ $$
 = \mathbb{D}y + \mathbb{D}a + \left( f^2 + \left(\mathbb{E}a\right)^2 - 2f\cdot\mathbb{E}a \right)=
 $$
 
+<<<<<<< develop
 $$
 = \mathbb{D}y + \mathbb{D}a + \left(\mathbb{E}\left[f - a\right]\right)^2 =
 $$
@@ -80,19 +82,15 @@ $$
 
 <Math block>
 
+=======
+>>>>>>> fix: use MathLayout instead Math
 $$
 = \mathbb{D}y + \mathbb{D}a + \left(\mathbb{E}\left[f - a\right]\right)^2 =
 $$
 
-</Math>
-
-<Math block>
-
 $$
 = \sigma^2 + variance(a) + bias^2(f, a)
 $$
-
-</Math>
 
 Мы получили **bias-variance decomposition** -- представление ошибки в виде суммы трёх слагаемых:
 
@@ -114,15 +112,16 @@ $$
 
 Идея бэггинга заключается в следующем. Выберем из обучающей выборки $n$ примеров. Будем выбирать примеры равновероятно, с повторением. Получим новую выборку $X_{\text{train}}^1$, в которой некоторых элементов исходной выборки не будет, а какие-то могут войти несколько раз. С помощью некоторого алгоритма $b$ обучим на этой выборке модель $b_1(x) = b(x; X_{\text{train}}^1)$. Повторим процедуру: сформируем вторую выборку $X_{\text{train}}^2$ из $n$ элементов с возвращением и с помощью того же алгоритма обучим на ней модель $b_2(x) = b(x; X_{\text{train}}^2)$. Повторив так $k$ раз, получим $k$ моделей, обученных на $k$ выборках. Чтобы получить одно предсказание, усредним предсказания всех моделей:
 
+<<<<<<< develop
 $$
 a(x) = \frac{1}{k}(b_1(x) + \dots + b_k(x)).
 $$
 
+=======
+>>>>>>> fix: use MathLayout instead Math
 $$
 a(x) = \frac{1}{k}(b_1(x) + \dots + b_k(x)).
 $$
-
-</Math>
 
 Модели $b_1(x)$, …, $b_k(x)$ часто называют базовыми алгоритмами (хотя, наверное, лучше было бы назвать их базовыми моделями). Модель $a(x)$ называется ансамблем этих моделей.
 
@@ -130,27 +129,29 @@ $$
 
 Сначала убедимся, что смещение ансамбля не изменилось по сравнению со средним смещением отдельных моделей. По линейности матожидания:
 
+<<<<<<< develop
 $$
 \mathbb{E}\left[f - a\right] = \mathbb{E}\left[f - \frac{1}{k}\sum_{i=1}^{k} b_i\right] = \frac{1}{k}\sum_{i=1}^{k}\mathbb{E}\left[f - b_i\right].
 $$
 
+=======
+>>>>>>> fix: use MathLayout instead Math
 $$
 \mathbb{E}\left[f - a\right] = \mathbb{E}\left[f - \frac{1}{k}\sum_{i=1}^{k} b_i\right] = \frac{1}{k}\sum_{i=1}^{k}\mathbb{E}\left[f - b_i\right].
 $$
-
-</Math>
 
 Теперь рассмотрим, что происходит с разбросом. **Сделаем предположение, что алгоритмы нескореллированы.** Тогда:
 
+<<<<<<< develop
 $$
 \mathbb{D}\left(a\right) = \frac{1}{k^2}\sum_i^k\mathbb{D}\left(b_i\right)+ \frac{1}{k^2}\sum_{1\le i < j \le k}cov \left(b_i, b_j\right)\ = \frac{1}{k^2}\sum_i^k\mathbb{D}\left(b_i\right) = \frac{1}{k}\mathbb{D}_{av},
 $$
 
+=======
+>>>>>>> fix: use MathLayout instead Math
 $$
 \mathbb{D}\left(a\right) = \frac{1}{k^2}\sum_i^k\mathbb{D}\left(b_i\right)+ \frac{1}{k^2}\sum_{1\le i < j \le k}cov \left(b_i, b_j\right)\ = \frac{1}{k^2}\sum_i^k\mathbb{D}\left(b_i\right) = \frac{1}{k}\mathbb{D}_{av},
 $$
-
-</Math>
 
 где $\mathbb{D}_{av}$ — это средний разброс базовых алгоритмов. Получилось, что процедура бэггинга уменьшает разброс в $k$ раз.
 
