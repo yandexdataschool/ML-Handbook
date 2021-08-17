@@ -29,10 +29,10 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'pages',
-        path: './src/pages/',
+        name: 'articles',
+        path: './src/pages/chapters/',
       },
-      __key: 'pages',
+      __key: 'articles',
     },
     {
       resolve: 'gatsby-plugin-prettier-eslint',
@@ -61,6 +61,10 @@ module.exports = {
       options: {
         extensions: ['.mdx', '.md'],
         remarkPlugins: [require("remark-math")],
+        defaultLayouts: {
+          articles: require.resolve("./src/components/ArticleLayout/ArticleLayout.tsx"),
+          default: require.resolve("./src/components/Layout/Layout.tsx"),
+        },
       },
     },
     `gatsby-plugin-styled-components`,
