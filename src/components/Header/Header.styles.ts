@@ -1,20 +1,22 @@
 import styled from 'styled-components';
 import backVectorImage from './images/Vector.png';
 import findImage from './images/Find.png';
+import tumblerImage from './images/Tumbler.png';
 
 const Header = styled.header`
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 1440px;
+  width: 1440px;
   height: 52px;
   display: flex;
 `;
 
 const Title = styled.h1`
-  max-width: 720px;
+  width: 720px;
   height: 24px;
   margin-block: 0;
   margin: auto 0;
+  margin-left: 40px;
   font-family: 'Yandex Sans Text';
   font-weight: 300;
   font-style: normal;
@@ -48,14 +50,30 @@ const BackTitle = styled.h2`
   color: rgba(59, 72, 86, 1);
 `;
 
-const WBmode = styled.h2`
-  width: 236px;
+const WBmode = styled.div`
+  margin: auto 0;
+  margin-left: 10px;
+  width: 204px;
   height: 21px;
   font-family: 'Yandex Sans Text';
   font-weight: 500;
   font-style: normal;
   font-size: 14px;
   color: rgba(59, 72, 86, 1);
+  display: flex;
+`;
+
+const Thema = styled.div`
+  width: 98px;
+  display: flex;
+`;
+
+const Tumbler = styled.image`
+  width: 46px;
+  height: 16px;
+  padding-left: 52px;
+  background-image: url(${tumblerImage});
+  background-repeat: no-repeat;
 `;
 
 const Find = styled.image`
@@ -65,4 +83,4 @@ const Find = styled.image`
   background-image: url(${findImage});
 `;
 
-export { Header, Title, BackToMain, BackVector, BackTitle, WBmode, Find };
+export { Header, Title, BackToMain, BackVector, BackTitle, WBmode, Thema, Tumbler, Find };
