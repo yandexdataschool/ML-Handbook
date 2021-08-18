@@ -30,7 +30,7 @@ const BackToMain = styled.div`
   display: flex;
 `;
 
-const BackVector = styled.image`
+const BackVector = styled.div`
   width: 14px;
   height: 14px;
   margin: auto 0;
@@ -68,7 +68,7 @@ const Thema = styled.div`
   display: flex;
 `;
 
-const Tumbler = styled.image`
+const Tumbler = styled.div`
   width: 46px;
   height: 16px;
   padding-left: 52px;
@@ -76,7 +76,7 @@ const Tumbler = styled.image`
   background-repeat: no-repeat;
 `;
 
-const Find = styled.image`
+const Find = styled.div`
   width: 32px;
   height: 32px;
   margin: auto;
