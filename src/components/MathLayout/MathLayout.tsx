@@ -5,33 +5,18 @@ import MathBlock from '../MathBlock/MathBlock';
 import MathInline from '../MathInline/MathInline';
 
 type ComponentProps = {
-  className: string;
   children: React.ReactNode;
 };
 
-type LayoutProps = {
-  children: React.ReactNode;
+const mathComponents = {
+  div: ({ children }: ComponentProps) => <MathBlock>{children}</MathBlock>,
+  span: ({ children }: ComponentProps) => <MathInline>{children}</MathInline>,
 };
 
-const Components = {
-  div: ({ className, children }: ComponentProps) => {
-    if (className?.includes('math-display')) {
-      return <MathBlock>{children}</MathBlock>;
-    }
-    return <div />;
-  },
-  span: ({ className, children }: ComponentProps) => {
-    if (className?.includes('math-inline')) {
-      return <MathInline>{children}</MathInline>;
-    }
-    return <span />;
-  },
-};
-
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children }: ComponentProps) {
   return (
     <div>
-      <MDXProvider components={Components}>{children}</MDXProvider>
+      <MDXProvider components={mathComponents}>{children}</MDXProvider>
     </div>
   );
 }
