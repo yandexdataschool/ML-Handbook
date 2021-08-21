@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import backVectorImage from './images/Vector.png';
-import findImage from './images/Find.png';
-import tumblerImage from './images/Tumbler.png';
+import backVectorImage from './images/Vector.svg';
+import findImage from './images/Find.svg';
+import tumblerImage from './images/Tumbler.svg';
 
 const Header = styled.header`
   margin-top: 0;
