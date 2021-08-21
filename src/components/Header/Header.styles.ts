@@ -63,7 +63,7 @@ const WBmode = styled.div`
   display: flex;
 `;
 
-const Thema = styled.div`
+const Theme = styled.div`
   width: 98px;
   display: flex;
 `;
@@ -83,4 +83,4 @@ const Find = styled.div`
   background-image: url(${findImage});
 `;
 
-export { Header, Title, BackToMain, BackVector, BackTitle, WBmode, Thema, Tumbler, Find };
+export { Header, Title, BackToMain, BackVector, BackTitle, WBmode, Theme, Tumbler, Find };

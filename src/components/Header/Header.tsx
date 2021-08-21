@@ -5,7 +5,7 @@ import * as Styles from './Header.styles';
 //   return <Styles.Header>Congratulations! It is the best Header</Styles.Header>;
 // };
 
-import { Title, BackToMain, BackVector, BackTitle, WBmode, Thema, Tumbler, Find } from './Header.styles';
+import { Title, BackToMain, BackVector, BackTitle, WBmode, Theme, Tumbler, Find } from './Header.styles';
 
 export const Header = () => {
   return (
@@ -14,13 +14,13 @@ export const Header = () => {
         <BackVector />
         <BackTitle>ML&ndash;Учебник</BackTitle>
       </BackToMain>
-      <Title>Вероятностный подход в ML</Title>
+      <Title>Об этой книге</Title>
       <WBmode>
-        <Thema>
+        <Theme>
           Белый
           <Tumbler />
-        </Thema>
-        <Thema>Черный</Thema>
+        </Theme>
+        <Theme>Черный</Theme>
       </WBmode>
       <Find />
     </Styles.Header>
