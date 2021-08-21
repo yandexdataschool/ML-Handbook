@@ -5,14 +5,18 @@ import coverImage from './images/penguins.png';
 
 export const Content = styled.section`
   max-width: 1140px;
-  padding-left: 44px;
+  margin-left: 13px;
+  @media screen and (min-width: 1440px) {
+    padding-left: 44px;
+    padding-right: 181px;
+  }
 `;
 
 export const Cover = styled.div`
   display: none;
-  @media screen and (min-width: 1140px) {
+  @media screen and (min-width: 1440px) {
     margin-top: 50px;
-    margin-left: 37px;
+    margin-left: -7px;
     display: block;
     width: 911px;
     height: 408px;

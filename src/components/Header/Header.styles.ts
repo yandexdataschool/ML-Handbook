@@ -37,7 +37,7 @@ const BackToMain = styled.div`
 
 const BackVector = styled.div`
   width: 14px;
-  height: 10px;
+  height: 11px;
   margin: auto 0;
   background-repeat: no-repeat;
   background-image: url(${backVectorImage});
@@ -75,11 +75,10 @@ const Theme = styled.div`
 `;
 
 const Tumbler = styled.div`
-  width: 46px;
+  width: 48px;
   height: 16px;
   margin-left: 8px;
   background-image: url(${tumblerImage});
-  background-repeat: no-repeat;
 `;
 
 const Find = styled.div`
