@@ -10,6 +10,7 @@ const Header = styled.header`
   height: 52px;
   display: flex;
   justify-content: space-around;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
 `;
 
 const Title = styled.h1`
