@@ -15,7 +15,7 @@ export const Main = styled.main`
   color: rgba(51, 51, 102, 1);
   font-style: normal;
   font-weight: normal;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 28px;
   display: flex;
 `;
