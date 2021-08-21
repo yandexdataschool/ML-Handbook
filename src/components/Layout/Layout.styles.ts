@@ -8,7 +8,6 @@ export const Page = styled.div`
 `;
 
 export const Main = styled.main`
-  max-width: 1140px;
   margin: 0 auto;
   background-color: #fff;
   color: rgba(51, 51, 102, 1);

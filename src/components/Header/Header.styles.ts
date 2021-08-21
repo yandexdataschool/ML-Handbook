@@ -6,33 +6,38 @@ import tumblerImage from './images/Tumbler.svg';
 const Header = styled.header`
   margin-top: 0;
   margin-bottom: 0;
-  width: 1440px;
+  max-width: 1440px;
   height: 52px;
   display: flex;
+  justify-content: space-around;
 `;
 
 const Title = styled.h1`
-  width: 720px;
-  height: 24px;
-  margin-block: 0;
-  margin: auto 0;
-  margin-left: 40px;
-  font-family: 'Yandex Sans Text';
-  font-weight: 300;
-  font-style: normal;
-  font-size: 20px;
+  display: none;
+  @media screen and (min-width: 1400px) {
+    display: flex;
+    width: 720px;
+    height: 24px;
+    margin-block: 0;
+    margin: auto 0;
+    margin-left: 40px;
+    font-family: 'Yandex Sans Text';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 20px;
+  }
 `;
 
 const BackToMain = styled.div`
   width: 280px;
   height: 24px;
-  margin: auto 20px;
+  margin: auto 0;
   display: flex;
 `;
 
 const BackVector = styled.div`
   width: 14px;
-  height: 14px;
+  height: 10px;
   margin: auto 0;
   background-repeat: no-repeat;
   background-image: url(${backVectorImage});
@@ -51,16 +56,19 @@ const BackTitle = styled.h2`
 `;
 
 const WBmode = styled.div`
-  margin: auto 0;
-  margin-left: 10px;
-  width: 204px;
-  height: 21px;
-  font-family: 'Yandex Sans Text';
-  font-weight: 500;
-  font-style: normal;
-  font-size: 14px;
-  color: rgba(59, 72, 86, 1);
-  display: flex;
+  display: none;
+  @media screen and (min-width: 768px) {
+    margin: auto 0;
+    margin-left: 10px;
+    width: 204px;
+    height: 21px;
+    font-family: 'Yandex Sans Text';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 14px;
+    color: rgba(59, 72, 86, 1);
+    display: flex;
+  }
 `;
 
 const Theme = styled.div`
@@ -79,7 +87,7 @@ const Tumbler = styled.div`
 const Find = styled.div`
   width: 32px;
   height: 32px;
-  margin: auto;
+  margin: auto 0;
   background-image: url(${findImage});
 `;
 
