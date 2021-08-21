@@ -21,7 +21,6 @@ const Title = styled.h1`
     margin-block: 0;
     margin: auto 0;
     margin-left: 40px;
-    font-family: 'Yandex Sans Text';
     font-weight: 300;
     font-style: normal;
     font-size: 20px;
@@ -48,7 +47,6 @@ const BackTitle = styled.h2`
   height: 24px;
   margin-left: 6px;
   margin-block: 0;
-  font-family: 'Yandex Sans Text';
   font-weight: 500;
   font-style: normal;
   font-size: 20px;
@@ -62,7 +60,6 @@ const WBmode = styled.div`
     margin-left: 10px;
     width: 204px;
     height: 21px;
-    font-family: 'Yandex Sans Text';
     font-weight: 500;
     font-style: normal;
     font-size: 14px;
