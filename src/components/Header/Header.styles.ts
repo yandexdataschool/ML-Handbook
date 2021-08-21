@@ -58,7 +58,7 @@ const WBmode = styled.div`
   @media screen and (min-width: 768px) {
     margin: auto 0;
     margin-left: 10px;
-    width: 204px;
+    width: 212px;
     height: 21px;
     font-weight: 500;
     font-style: normal;
@@ -69,14 +69,14 @@ const WBmode = styled.div`
 `;
 
 const Theme = styled.div`
-  width: 98px;
+  width: 106px;
   display: flex;
 `;
 
 const Tumbler = styled.div`
   width: 46px;
   height: 16px;
-  padding-left: 52px;
+  margin-left: 8px;
   background-image: url(${tumblerImage});
   background-repeat: no-repeat;
 `;
