@@ -4,13 +4,12 @@ import findImage from './images/Find.svg';
 import tumblerImage from './images/Tumbler.svg';
 
 const Header = styled.header`
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
   max-width: 1440px;
   height: 52px;
   display: flex;
   justify-content: space-around;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 7px 13px -7px rgba(0, 0, 0, 0.06);
 `;
 
 const Title = styled.h1`
