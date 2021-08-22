@@ -74,9 +74,10 @@ export const InternalAuthors = styled.div`
 export const InternalAuthor = styled.div`
   display: flex;
   width: 263px;
+  height: 107px;
 `;
 
-export const AuthorsPhoto = styled.img`
+export const AuthorsPhoto = styled.div`
   width: 72px;
   height: 72px;
   margin-right: 11px;
