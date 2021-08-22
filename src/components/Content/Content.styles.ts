@@ -40,3 +40,56 @@ export const CoverImage = styled.div`
   background-repeat: no-repeat;
   background-image: url(${coverImage});
 `;
+
+export const Internal = styled.div`
+  display: block;
+  @media screen and (min-width: 1440px) {
+    width: 900px;
+  }
+`;
+
+export const InternalTitel = styled.p`
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+  @media screen and (min-width: 1440px) {
+    display: block;
+    font-size: 44px;
+    font-weight: 700;
+  }
+`;
+
+export const InternalAuthors = styled.div`
+  display: block;
+  width: 263px;
+  margin: 0 auto;
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    margin-left: 117px;
+    width: 789px;
+    height: 107px;
+  }
+`;
+
+export const InternalAuthor = styled.div`
+  display: flex;
+  width: 263px;
+`;
+
+export const AuthorsPhoto = styled.img`
+  width: 72px;
+  height: 72px;
+  margin-right: 11px;
+  background-color: rgba(229, 229, 229, 1);
+  border-radius: 50%;
+`;
+
+export const AuthorsName = styled.p`
+  max-width: 190px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration-line: underline;
+  color: #3b4856;
+`;
