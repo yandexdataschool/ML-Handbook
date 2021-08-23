@@ -1,5 +1,6 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
+import { graphql } from 'gatsby';
 import * as Styles from './Content.styles';
 import {
   Cover,
@@ -20,6 +21,7 @@ type Props = {
 const shortcodes = { Math };
 
 export const Content = ({ children }: Props) => {
+  console.log(children[0]);
   return (
     <MDXProvider components={shortcodes}>
       <Styles.Content>
@@ -28,7 +30,7 @@ export const Content = ({ children }: Props) => {
           <CoverImage />
         </Cover>
         <Internal>
-          <InternalTitel>Об этой книге</InternalTitel>
+          <InternalTitel>Title: {children[0].props.children}</InternalTitel>
           <InternalAuthors>
             <InternalAuthor>
               <AuthorsPhoto />
@@ -61,3 +63,18 @@ export const Content = ({ children }: Props) => {
     </MDXProvider>
   );
 };
+
+export const query = graphql`
+  query {
+    allMdx {
+      edges {
+        node {
+          frontmatter {
+            author
+            title
+          }
+        }
+      }
+    }
+  }
+`;
