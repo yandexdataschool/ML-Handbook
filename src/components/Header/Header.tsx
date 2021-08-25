@@ -1,28 +1,22 @@
 import React from 'react';
 import * as Styles from './Header.styles';
 
-// export const Header = () => {
-//   return <Styles.Header>Congratulations! It is the best Header</Styles.Header>;
-// };
-
-import { Title, BackToMain, BackVector, BackTitle, WBmode, Theme, Tumbler, Find } from './Header.styles';
-
 export const Header = () => {
   return (
     <Styles.Header>
-      <BackToMain>
-        <BackVector />
-        <BackTitle>ML&ndash;Учебник</BackTitle>
-      </BackToMain>
-      <Title>Об этой книге</Title>
-      <WBmode>
-        <Theme>
+      <Styles.BackToMain>
+        <Styles.BackVector />
+        <Styles.BackTitle>ML&ndash;Учебник</Styles.BackTitle>
+      </Styles.BackToMain>
+      <Styles.Title>Об этой книге</Styles.Title>
+      <Styles.WBmode>
+        <Styles.Theme>
           Белый
-          <Tumbler />
-        </Theme>
-        <Theme>Черный</Theme>
-      </WBmode>
-      <Find />
+          <Styles.Tumbler />
+        </Styles.Theme>
+        <Styles.Theme>Черный</Styles.Theme>
+      </Styles.WBmode>
+      <Styles.Find />
     </Styles.Header>
   );
 };

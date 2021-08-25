@@ -3,7 +3,7 @@ import backVectorImage from './images/Vector.svg';
 import findImage from './images/Find.svg';
 import tumblerImage from './images/Tumbler.svg';
 
-const Header = styled.header`
+export const Header = styled.header`
   margin-top: 0;
   margin-bottom: 0;
   max-width: 1440px;
@@ -12,7 +12,7 @@ const Header = styled.header`
   justify-content: space-around;
 `;
 
-const Title = styled.h1`
+export const Title = styled.h1`
   display: none;
   @media screen and (min-width: 1400px) {
     display: flex;
@@ -27,14 +27,14 @@ const Title = styled.h1`
   }
 `;
 
-const BackToMain = styled.div`
+export const BackToMain = styled.div`
   width: 280px;
   height: 24px;
   margin: auto 0;
   display: flex;
 `;
 
-const BackVector = styled.div`
+export const BackVector = styled.div`
   width: 14px;
   height: 10px;
   margin: auto 0;
@@ -42,7 +42,7 @@ const BackVector = styled.div`
   background-image: url(${backVectorImage});
 `;
 
-const BackTitle = styled.h2`
+export const BackTitle = styled.h2`
   width: 250px;
   height: 24px;
   margin-left: 6px;
@@ -53,7 +53,7 @@ const BackTitle = styled.h2`
   color: rgba(59, 72, 86, 1);
 `;
 
-const WBmode = styled.div`
+export const WBmode = styled.div`
   display: none;
   @media screen and (min-width: 768px) {
     margin: auto 0;
@@ -68,24 +68,22 @@ const WBmode = styled.div`
   }
 `;
 
-const Theme = styled.div`
+export const Theme = styled.div`
   width: 106px;
   display: flex;
 `;
 
-const Tumbler = styled.div`
-  width: 46px;
+export const Tumbler = styled.div`
+  width: 48px;
   height: 16px;
   margin-left: 8px;
   background-image: url(${tumblerImage});
   background-repeat: no-repeat;
 `;
 
-const Find = styled.div`
+export const Find = styled.div`
   width: 32px;
   height: 32px;
   margin: auto 0;
   background-image: url(${findImage});
 `;
-
-export { Header, Title, BackToMain, BackVector, BackTitle, WBmode, Theme, Tumbler, Find };
