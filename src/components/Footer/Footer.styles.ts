@@ -1,10 +1,24 @@
 import styled from 'styled-components';
 
-export const Footer = styled.footer`
-  margin-top: 0;
-  margin-bottom: 0;
-  height: 100px;
-  width: 800px;
-  font-size: 38px;
-  background-color: blanchedalmond;
+export const FooterWrapper = styled.footer`
+  height: 80px;
+  background-color: #000;
+  opacity: 0.8;
+`;
+
+export const Footer = styled.div`
+  display: flex;
+  height: inherit;
+  max-width: 1440px;
+  align-items: flex-end;
+  text-align: right;
+`;
+
+export const FooterText = styled.p`
+  margin-block: 0;
+  margin: auto 23px 11px auto;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(114, 114, 114, 1);
+  opacity: 0.8;
 `;
