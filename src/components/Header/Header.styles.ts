@@ -3,13 +3,18 @@ import backVectorImage from './images/Vector.svg';
 import findImage from './images/Find.svg';
 import tumblerImage from './images/Tumbler.svg';
 
-export const Header = styled.header`
+export const HeaderWrapper = styled.header`
+  display: flex;
+  height: 52px;
+  justify-content: space-around;
+`;
+
+export const Header = styled.div`
   margin-top: 0;
   margin-bottom: 0;
   max-width: 1440px;
   height: 52px;
   display: flex;
-  justify-content: space-around;
 `;
 
 export const Title = styled.h1`
@@ -36,7 +41,7 @@ export const BackToMain = styled.div`
 
 export const BackVector = styled.div`
   width: 14px;
-  height: 10px;
+  height: 11px;
   margin: auto 0;
   background-repeat: no-repeat;
   background-image: url(${backVectorImage});
@@ -59,7 +64,6 @@ export const WBmode = styled.div`
     margin: auto 0;
     margin-left: 10px;
     width: 212px;
-    height: 21px;
     font-weight: 500;
     font-style: normal;
     font-size: 14px;
