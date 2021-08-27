@@ -1,3 +1,4 @@
+import '../../styles/modern-normalize.css';
 import styled from 'styled-components';
 
 export const Main = styled.main`
