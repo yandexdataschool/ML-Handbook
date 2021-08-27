@@ -42,6 +42,7 @@
     "gatsby-source-filesystem": "^3.8.0",
     "gatsby-transformer-sharp": "^3.8.0",
     "katex": "^0.13.13",
+    "modern-normalize": "^1.1.0",
     "postcss": "^8.2.6",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
