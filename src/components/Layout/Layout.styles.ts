@@ -3,7 +3,6 @@ import '../../typography.css';
 
 export const Page = styled.div`
   font-family: 'YS Text', georgia, serif;
-  max-width: 1440px;
   margin: 0 auto;
   background-color: #fff;
   color: rgba(51, 51, 102, 1);
@@ -11,6 +10,7 @@ export const Page = styled.div`
 
 export const Main = styled.main`
   margin: 0 auto;
+  max-width: 1440px;
   background-color: #fff;
   color: rgba(51, 51, 102, 1);
   font-style: normal;
