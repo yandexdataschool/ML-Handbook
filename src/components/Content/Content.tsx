@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { graphql } from 'gatsby';
+import { MDXProvider } from '@mdx-js/react';
 import * as Styles from './Content.styles';
 import {
   Cover,
@@ -19,58 +18,44 @@ type Props = {
 };
 
 export const Content = ({ children }: Props) => {
-  console.log(children[0]);
   return (
-    <Styles.Content>
-      <Cover>
-        <ContentImage />
-        <CoverImage />
-      </Cover>
-      <Internal>
-        <InternalTitel>Title: {children[0].props.children}</InternalTitel>
-        <InternalAuthors>
-          <InternalAuthor>
-            <AuthorsPhoto />
-            <AuthorsName>
-              Артемий
-              <br />
-              Михеев
-            </AuthorsName>
-          </InternalAuthor>
-          <InternalAuthor>
-            <AuthorsPhoto />
-            <AuthorsName>
-              Федот
-              <br />
-              Станиславский
-            </AuthorsName>
-          </InternalAuthor>
-          <InternalAuthor>
-            <AuthorsPhoto />
-            <AuthorsName>
-              Константин
-              <br />
-              Константиновский
-            </AuthorsName>
-          </InternalAuthor>
-        </InternalAuthors>
-        {children}
-      </Internal>
-    </Styles.Content>
+    <MDXProvider components={shortcodes}>
+      <Styles.Content>
+        <Cover>
+          <ContentImage />
+          <CoverImage />
+        </Cover>
+        <Internal>
+          <InternalTitel>Title: </InternalTitel>
+          <InternalAuthors>
+            <InternalAuthor>
+              <AuthorsPhoto />
+              <AuthorsName>
+                Артемий
+                <br />
+                Михеев
+              </AuthorsName>
+            </InternalAuthor>
+            <InternalAuthor>
+              <AuthorsPhoto />
+              <AuthorsName>
+                Федот
+                <br />
+                Станиславский
+              </AuthorsName>
+            </InternalAuthor>
+            <InternalAuthor>
+              <AuthorsPhoto />
+              <AuthorsName>
+                Константин
+                <br />
+                Константиновский
+              </AuthorsName>
+            </InternalAuthor>
+          </InternalAuthors>
+          {children}
+        </Internal>
+      </Styles.Content>
+    </MDXProvider>
   );
 };
-
-export const query = graphql`
-  query {
-    allMdx {
-      edges {
-        node {
-          frontmatter {
-            author
-            title
-          }
-        }
-      }
-    }
-  }
-`;
