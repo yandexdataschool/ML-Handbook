@@ -4,9 +4,9 @@ import * as Styles from './Switch.styles';
 export const Switch = () => {
   return (
     <Styles.WBmode>
-      Белый
+      <Styles.Theme>Белый</Styles.Theme>
       <Styles.Tumbler type="checkbox" />
-      Черный
+      <Styles.Theme>Черный</Styles.Theme>
     </Styles.WBmode>
   );
 };
