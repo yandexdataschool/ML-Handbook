@@ -4,8 +4,8 @@ import { Switch } from '../Switch/Switch';
 
 export const Header = () => {
   return (
-    <Styles.HeaderWrapper>
-      <Styles.Header>
+    <Styles.Header>
+      <Styles.HeaderWrapper>
         <Styles.BackToMain>
           <Styles.BackVector />
           <Styles.BackTitle>ML&ndash;Учебник</Styles.BackTitle>
@@ -13,7 +13,7 @@ export const Header = () => {
         <Styles.Title>Об этой книге</Styles.Title>
         <Switch />
         <Styles.Find />
-      </Styles.Header>
-    </Styles.HeaderWrapper>
+      </Styles.HeaderWrapper>
+    </Styles.Header>
   );
 };

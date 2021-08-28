@@ -1,40 +1,43 @@
 import styled from 'styled-components';
 import backVectorImage from './images/Vector.svg';
 import findImage from './images/Find.svg';
-import tumblerImage from './images/Tumbler.svg';
 
-export const HeaderWrapper = styled.header`
+export const Header = styled.header`
+  background-color: rgba(255, 255, 255, 1);
   display: flex;
-  height: 52px;
-  justify-content: space-around;
+  min-height: 52px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
 `;
 
-export const Header = styled.div`
-  margin-top: 0;
-  margin-bottom: 0;
+export const HeaderWrapper = styled.div`
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
   max-width: 1440px;
-  height: 52px;
+  min-height: 52px;
   display: flex;
+  padding-left: 22px;
+  padding-right: 13px;
+  justify-content: space-between;
 `;
 
 export const Title = styled.h1`
   display: none;
   @media screen and (min-width: 1400px) {
     display: flex;
-    width: 720px;
-    height: 24px;
-    margin-block: 0;
-    margin: auto 0;
-    margin-left: 40px;
+    font-family: inherit;
     font-weight: 300;
     font-style: normal;
     font-size: 20px;
+    width: 720px;
+    min-height: 24px;
+    margin: auto 0;
   }
 `;
 
 export const BackToMain = styled.div`
   width: 280px;
-  height: 24px;
+  min-height: 24px;
   margin: auto 0;
   display: flex;
 `;
@@ -49,45 +52,19 @@ export const BackVector = styled.div`
 
 export const BackTitle = styled.h2`
   width: 250px;
-  height: 24px;
+  min-height: 24px;
   margin-left: 6px;
-  margin-block: 0;
   font-weight: 500;
   font-style: normal;
   font-size: 20px;
   color: rgba(59, 72, 86, 1);
 `;
 
-export const WBmode = styled.div`
-  display: none;
-  @media screen and (min-width: 768px) {
-    margin: auto 0;
-    margin-left: 10px;
-    width: 212px;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 14px;
-    color: rgba(59, 72, 86, 1);
-    display: flex;
-  }
-`;
-
-export const Theme = styled.div`
-  width: 106px;
-  display: flex;
-`;
-
-export const Tumbler = styled.div`
-  width: 48px;
-  height: 16px;
-  margin-left: 8px;
-  background-image: url(${tumblerImage});
-  background-repeat: no-repeat;
-`;
-
-export const Find = styled.div`
+export const Find = styled.button`
   width: 32px;
   height: 32px;
   margin: auto 0;
   background-image: url(${findImage});
+  border: none;
+  background-color: transparent;
 `;
