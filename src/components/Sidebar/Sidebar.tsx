@@ -7,6 +7,5 @@ export const Sidebar = styled.section`
     display: block;
     min-width: 300px;
     font-size: 15px;
-    box-shadow: inset -5px 0 30px -20px rgba(0, 0, 0, 0.06);
   }
 `;
