@@ -1,8 +1,6 @@
-import styled from 'styled-components';
+import React from 'react';
+import * as Styles from './Finisher.styles';
 
-export const Finisher = styled.section`
-  display: block;
-  min-width: 300px;
-  min-height: 200px;
-  font-size: 15px;
-`;
+export const Finisher = () => {
+  return <Styles.Finisher>Далее идет навигация</Styles.Finisher>;
+};
