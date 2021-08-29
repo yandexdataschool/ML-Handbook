@@ -6,12 +6,6 @@ import coverImage from './images/penguins.png';
 export const Content = styled.section`
   border: 1px solid red;
   max-width: 1140px;
-  @media screen and (min-width: 1140px) {
-    max-width: 820px;
-  }
-  @media screen and (min-width: 1440px) {
-    max-width: 1120px;
-  }
 `;
 
 export const Article = styled.section`
@@ -19,14 +13,12 @@ export const Article = styled.section`
   box-sizing: border-box;
   max-width: 1140px;
   @media screen and (min-width: 1140px) {
-    max-width: 820px;
-    padding: 50px 90px 28px 22px;
+    padding: 50px 60px 28px 22px;
     box-shadow: 0px 4px 32px 2px rgba(0, 0, 0, 0.06);
   }
   @media screen and (min-width: 1440px) {
-    max-width: 1120px;
     padding-left: 44px;
-    padding-right: 181px;
+    padding-right: 164px;
   }
 `;
 

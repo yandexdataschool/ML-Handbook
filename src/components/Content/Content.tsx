@@ -1,6 +1,7 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 
+import { TableOfContents } from '../TableOfContents/TableOfContents';
 import { Finisher } from '../Finisher/Finisher';
 
 import * as Styles from './Content.styles';
@@ -38,6 +39,70 @@ export const Content = ({ children }: Props) => {
               <Styles.ArticleAuthor>
                 <Styles.AuthorsPhoto />
                 <Styles.AuthorsName>
+                  Артемий
+                  <br />
+                  Михеев
+                </Styles.AuthorsName>
+              </Styles.ArticleAuthor>
+              <Styles.ArticleAuthor>
+                <Styles.AuthorsPhoto />
+                <Styles.AuthorsName>
+                  Артемий
+                  <br />
+                  Михеев
+                </Styles.AuthorsName>
+              </Styles.ArticleAuthor>
+              <Styles.ArticleAuthor>
+                <Styles.AuthorsPhoto />
+                <Styles.AuthorsName>
+                  Артемий
+                  <br />
+                  Михеев
+                </Styles.AuthorsName>
+              </Styles.ArticleAuthor>
+              <Styles.ArticleAuthor>
+                <Styles.AuthorsPhoto />
+                <Styles.AuthorsName>
+                  Артемий
+                  <br />
+                  Михеев
+                </Styles.AuthorsName>
+              </Styles.ArticleAuthor>
+              <Styles.ArticleAuthor>
+                <Styles.AuthorsPhoto />
+                <Styles.AuthorsName>
+                  Артемий
+                  <br />
+                  Михеев
+                </Styles.AuthorsName>
+              </Styles.ArticleAuthor>
+              <Styles.ArticleAuthor>
+                <Styles.AuthorsPhoto />
+                <Styles.AuthorsName>
+                  Артемий
+                  <br />
+                  Михеев
+                </Styles.AuthorsName>
+              </Styles.ArticleAuthor>
+              <Styles.ArticleAuthor>
+                <Styles.AuthorsPhoto />
+                <Styles.AuthorsName>
+                  Артемий
+                  <br />
+                  Михеев
+                </Styles.AuthorsName>
+              </Styles.ArticleAuthor>
+              <Styles.ArticleAuthor>
+                <Styles.AuthorsPhoto />
+                <Styles.AuthorsName>
+                  Артемий
+                  <br />
+                  Михеев
+                </Styles.AuthorsName>
+              </Styles.ArticleAuthor>
+              <Styles.ArticleAuthor>
+                <Styles.AuthorsPhoto />
+                <Styles.AuthorsName>
                   Федот
                   <br />
                   Станиславский
@@ -51,8 +116,25 @@ export const Content = ({ children }: Props) => {
                   Константиновский
                 </Styles.AuthorsName>
               </Styles.ArticleAuthor>
+              <Styles.ArticleAuthor>
+                <Styles.AuthorsPhoto />
+                <Styles.AuthorsName>
+                  Константин
+                  <br />
+                  Константиновский
+                </Styles.AuthorsName>
+              </Styles.ArticleAuthor>
+              <Styles.ArticleAuthor>
+                <Styles.AuthorsPhoto />
+                <Styles.AuthorsName>
+                  Константин
+                  <br />
+                  Константи-новский
+                </Styles.AuthorsName>
+              </Styles.ArticleAuthor>
             </Styles.AuthorsList>
           </Styles.ArticleAuthors>
+          <TableOfContents />
           <Styles.Internal>{children}</Styles.Internal>
         </Styles.Article>
         <Finisher>Далее</Finisher>
