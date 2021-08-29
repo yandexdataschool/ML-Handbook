@@ -48,6 +48,12 @@ const SidebarHeading = styled.h3`
   font-size: 18px;
   font-family: 'YandexSerif', Georgia, 'Times New Roman', Times, serif;
   line-height: 20px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+
+  &:hover {
+    opacity: 0.6;
+  }
 `;
 
 const SidebarItem = styled.div`
@@ -69,11 +75,11 @@ const SidebarListItem = styled.li`
   font-size: 15px;
   font-family: 'YandexSans', Arial, Helvetica, sans-serif;
   line-height: 18px;
+  cursor: pointer;
   transition: opacity 0.2s ease-in;
 
   &:hover {
     opacity: 0.6;
-    cursor: pointer;
   }
 
   ${({ current }: Props) =>
@@ -107,11 +113,11 @@ const SideBarSublistItem = styled.li`
   font-size: 15px;
   font-family: 'YandexSans', Arial, Helvetica, sans-serif;
   line-height: 18px;
+  cursor: pointer;
   transition: opacity 0.2s ease-in;
 
   &:hover {
     opacity: 0.6;
-    cursor: pointer;
   }
 
   ${({ current }: Props) =>
