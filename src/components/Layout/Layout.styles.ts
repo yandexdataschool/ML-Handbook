@@ -1,13 +1,21 @@
 import styled from 'styled-components';
+import '../../typography.css';
 
-export const Main = styled.main`
+export const Page = styled.div`
+  font-family: 'YS Text', georgia, serif;
   margin: 0 auto;
   background-color: #fff;
   color: rgba(51, 51, 102, 1);
+`;
+
+export const Main = styled.main`
+  margin: 0 auto;
   max-width: 1440px;
-  font-family: YS Text;
+  background-color: #fff;
+  color: rgba(51, 51, 102, 1);
   font-style: normal;
   font-weight: normal;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 28px;
+  display: flex;
 `;

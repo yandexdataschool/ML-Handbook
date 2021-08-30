@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Footer = styled.footer`
+
   min-height: 80px;
   padding: 11px 23px;
   box-sizing: border-box;
