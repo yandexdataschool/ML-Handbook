@@ -20,8 +20,6 @@ const Sidebar = styled.div`
   height: calc(100vh - 100px);
   background: #fff;
   z-index: 1;
-
-  gap: 12px;
 `;
 
 const SidebarCloseBtn = styled.button`
@@ -43,6 +41,7 @@ const SidebarCloseBtn = styled.button`
 
 const SidebarHeading = styled.h3`
   margin: 0;
+  margin-bottom: 12px;
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
@@ -59,8 +58,6 @@ const SidebarHeading = styled.h3`
 const SidebarItem = styled.div`
   display: flex;
   flex-direction: column;
-
-  gap: 6px;
 `;
 
 const SidebarList = styled.ul`
@@ -90,13 +87,13 @@ const SidebarListItem = styled.li`
     font-weight: 400;
 
     &::before {
-        position: absolute;
-  top: 0;
-  left: -36px;
-  width: 4px;
-  height: 100%;
-  background-color: #FFC100;
-  content: '';
+      position: absolute;
+      top: 0;
+      left: -36px;
+      width: 4px;
+      height: 100%;
+      background-color: #FFC100;
+      content: '';
     }
   `}
 `;
@@ -128,13 +125,13 @@ const SideBarSublistItem = styled.li`
     font-weight: 400;
 
     &::before {
-        position: absolute;
-  top: 0;
-  left: -58px;
-  width: 4px;
-  height: 100%;
-  background-color: #FFC100;
-  content: '';
+      position: absolute;
+      top: 0;
+      left: -58px;
+      width: 4px;
+      height: 100%;
+      background-color: #FFC100;
+      content: '';
     }
   `}
 `;
