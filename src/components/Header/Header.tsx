@@ -1,29 +1,20 @@
 import React from 'react';
 // import { StaticQuery, graphql } from 'gatsby';
 import * as Styles from './Header.styles';
-
-// export const Header = () => {
-//   return <Styles.Header>Congratulations! It is the best Header</Styles.Header>;
-// };
-
-import { Title, BackToMain, BackVector, BackTitle, WBmode, Theme, Tumbler, Find } from './Header.styles';
+import { Switch } from '../Switch/Switch';
 
 export const Header = () => {
   return (
     <Styles.Header>
-      <BackToMain>
-        <BackVector />
-        <BackTitle>ML&ndash;Учебник</BackTitle>
-      </BackToMain>
-      <Title>Об этой книге</Title>
-      <WBmode>
-        <Theme>
-          Белый
-          <Tumbler />
-        </Theme>
-        <Theme>Черный</Theme>
-      </WBmode>
-      <Find />
+      <Styles.HeaderWrapper>
+        <Styles.BackToMain>
+          <Styles.BackVector />
+          <Styles.BackTitle>ML&ndash;Учебник</Styles.BackTitle>
+        </Styles.BackToMain>
+        <Styles.Title>Об этой книге</Styles.Title>
+        <Switch />
+        <Styles.Find />
+      </Styles.HeaderWrapper>
     </Styles.Header>
   );
 };

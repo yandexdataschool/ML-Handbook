@@ -1,40 +1,48 @@
 import styled from 'styled-components';
 import backVectorImage from './images/Vector.svg';
 import findImage from './images/Find.svg';
-import tumblerImage from './images/Tumbler.svg';
 
-const Header = styled.header`
-  margin: 0;
-  max-width: 1440px;
-  height: 52px;
+export const Header = styled.header`
+  background-color: rgba(255, 255, 255, 1);
   display: flex;
-  justify-content: space-around;
-  box-shadow: 0 7px 13px -7px rgba(0, 0, 0, 0.06);
+  min-height: 52px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
 `;
 
-const Title = styled.h1`
+export const HeaderWrapper = styled.div`
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+  min-height: 52px;
+  display: flex;
+  padding-left: 22px;
+  padding-right: 13px;
+  justify-content: space-between;
+`;
+
+export const Title = styled.h1`
   display: none;
   @media screen and (min-width: 1400px) {
     display: flex;
-    width: 720px;
-    height: 24px;
-    margin-block: 0;
-    margin: auto 0;
-    margin-left: 40px;
+    font-family: inherit;
     font-weight: 300;
     font-style: normal;
     font-size: 20px;
+    width: 720px;
+    min-height: 24px;
+    margin: auto 0;
   }
 `;
 
-const BackToMain = styled.div`
+export const BackToMain = styled.div`
   width: 280px;
-  height: 24px;
+  min-height: 24px;
   margin: auto 0;
   display: flex;
 `;
 
-const BackVector = styled.div`
+export const BackVector = styled.div`
   width: 14px;
   height: 11px;
   margin: auto 0;
@@ -42,49 +50,21 @@ const BackVector = styled.div`
   background-image: url(${backVectorImage});
 `;
 
-const BackTitle = styled.h2`
+export const BackTitle = styled.h2`
   width: 250px;
-  height: 24px;
+  min-height: 24px;
   margin-left: 6px;
-  margin-block: 0;
   font-weight: 500;
   font-style: normal;
   font-size: 20px;
   color: rgba(59, 72, 86, 1);
 `;
 
-const WBmode = styled.div`
-  display: none;
-  @media screen and (min-width: 768px) {
-    margin: auto 0;
-    margin-left: 10px;
-    width: 212px;
-    height: 21px;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 14px;
-    color: rgba(59, 72, 86, 1);
-    display: flex;
-  }
-`;
-
-const Theme = styled.div`
-  width: 106px;
-  display: flex;
-`;
-
-const Tumbler = styled.div`
-  width: 48px;
-  height: 16px;
-  margin-left: 8px;
-  background-image: url(${tumblerImage});
-`;
-
-const Find = styled.div`
+export const Find = styled.button`
   width: 32px;
   height: 32px;
   margin: auto 0;
   background-image: url(${findImage});
+  border: none;
+  background-color: transparent;
 `;
-
-export { Header, Title, BackToMain, BackVector, BackTitle, WBmode, Theme, Tumbler, Find };
