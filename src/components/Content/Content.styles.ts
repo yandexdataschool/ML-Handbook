@@ -4,12 +4,10 @@ import contentImage from './images/rectangle.jpg';
 import coverImage from './images/penguins.png';
 
 export const Content = styled.section`
-  border: 1px solid red;
   max-width: 1140px;
 `;
 
 export const Article = styled.section`
-  border: 1px solid black;
   box-sizing: border-box;
   max-width: 1140px;
   @media screen and (min-width: 1140px) {
