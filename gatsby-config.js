@@ -68,5 +68,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-yandex-metrika`,
+      options: {
+        trackingId: 71668210,
+        webvisor: true,
+        trackHash: true,
+        afterBody: true,
+        defer: false,
+      },
+    },
   ],
 };
