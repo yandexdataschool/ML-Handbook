@@ -1,4 +1,5 @@
 import React from 'react';
+import { MDXProvider } from '@mdx-js/react';
 
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
@@ -9,13 +10,17 @@ type Props = {
   children: React.ReactNode;
 };
 
+const shortcodes = { Math };
+
 const Layout = ({ children }: Props) => {
   return (
-    <>
-      <Header />
-      <Styles.Main>{children}</Styles.Main>
-      <Footer />
-    </>
+    <MDXProvider components={shortcodes}>
+      <Styles.Page>
+        <Header />
+        <Styles.Main>{children}</Styles.Main>
+        <Footer />
+      </Styles.Page>
+    </MDXProvider>
   );
 };
 
