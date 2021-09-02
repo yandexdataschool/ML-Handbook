@@ -8,11 +8,9 @@ export const Page = styled.div`
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 1);
   color: rgba(0, 0, 0, 1);
-  border: 1px solid green;
 `;
 
 export const Main = styled.main`
-  border: 1px solid blue;
   font-family: inherit;
   color: inherit;
   font-size: 18px;
