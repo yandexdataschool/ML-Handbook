@@ -5,7 +5,6 @@ const Container = styled.div`
   margin: 3rem auto;
   max-width: 600px;
   display: block;
-  border: 1px solid red;
 `;
 
 const Title = styled.h2`
