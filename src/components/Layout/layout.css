@@ -1,0 +1,27 @@
+h1 {
+  font-family: 'YS Text';
+  font-size: 38px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 48px;
+}
+
+h2 {
+  font-family: 'YS Text';
+  font-size: 26px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 32px;
+}
+
+h3 {
+  font-family: 'YS Text';
+  font-size: 22px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 24px;
+}
+
+:hover {
+  border-bottom: 2px solid rgba(255, 193, 0, 1);
+}

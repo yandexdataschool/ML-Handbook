@@ -1,6 +1,9 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 
+import '../../../node_modules/modern-normalize/modern-normalize.css';
+import './layout.css';
+
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 
