@@ -7,7 +7,7 @@ type Props = {
 };
 
 const Sidebar = styled.div`
-  position: fixed;
+  /* position: fixed; */
   top: 100px;
   left: 0;
   display: flex;
