@@ -7,18 +7,26 @@ type Props = {
 };
 
 const Sidebar = styled.div`
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+
+  @media only screen and (max-width: 1140px) {
+    display: none;
+  }
+`;
+
+const SidebarContent = styled.div`
   position: fixed;
-  top: 100px;
-  left: 0;
   display: flex;
   overflow: scroll;
   flex-direction: column;
   box-sizing: border-box;
   padding: 24px 40px 0 20px;
   width: 100%;
-  max-width: 300px;
   height: calc(100vh - 100px);
-  background: #fff;
+  max-width: 300px;
   z-index: 1;
 `;
 
@@ -138,6 +146,7 @@ const SideBarSublistItem = styled.li`
 
 export {
   Sidebar,
+  SidebarContent,
   SidebarCloseBtn,
   SidebarItem,
   SidebarHeading,
