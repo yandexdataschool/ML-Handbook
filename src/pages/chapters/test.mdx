@@ -11,3 +11,17 @@ the background color!**
 <div style={{ padding: '20px', backgroundColor: 'red' }}>
   <h3>This is JSX</h3>
 </div>
+
+```python
+import nn
+
+X, y = get_data() # читаем данные, X - матрица, y - вектор
+w = nn.Matrix(X.shape()[0], 1) # вектор весов модели
+
+for i in range(100): # итерации градиентного спуска
+    p = nn.sigmoid(nn.dot(w, x)) # предсказание модели. Обратите внимание, что собственно нейросеть задана именно в этой строчке
+    loss = nn.logloss(p, y) # считаем ошибку
+
+    dw = nn.grad(loss, w) # авторы библиотеки уже запрограммировали для нас backpropagation, а не только вычисление градиента
+    w -= 1e-4 * dw  # обновление весов модели 1e-4 -- learning rate
+```

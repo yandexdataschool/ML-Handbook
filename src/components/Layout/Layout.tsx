@@ -1,10 +1,13 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 
 import * as Styles from './Layout.styles';
+
+deckDeckGoHighlightElement();
 
 type Props = {
   children: React.ReactNode;
