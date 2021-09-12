@@ -7,7 +7,7 @@ type Props = {
 };
 
 const Sidebar = styled.div`
-  position: fixed;
+  /* position: fixed; */
   top: 100px;
   left: 0;
   display: flex;
@@ -23,7 +23,7 @@ const Sidebar = styled.div`
 `;
 
 const SidebarCloseBtn = styled.button`
-  position: absolute;
+  /* position: absolute; */
   top: 16px;
   right: 16px;
   width: 14px;

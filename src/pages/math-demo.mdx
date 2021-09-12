@@ -1,0 +1,19 @@
+$$
+p(y \vert X, w) = p(y_1 \vert x_1, w) \cdot\ldots\cdot p(y_i \vert x_i, w)
+$$
+
+$$
+\log{p(y \vert X,w)} = -\frac{N}{2\log(2\pi\sigma^2)} - \frac{1}{2\sigma^2}(y - Xw)^T(y - Xw)
+$$
+
+$$
+l(X, y) = -\sum_{i=1}^N(y_i\log(\sigma(\langle w, x_i\rangle)) + (1 - y_i)\log(1 - \sigma(\langle w, x_i\rangle)))
+$$
+
+$$
+\sum_{i=1}^N\left(\vphantom{\frac12}y_i\log{q(x_i)} + (1 - y_i)\log(1 - q(x_i))\right)
+$$
+
+$$
+\sum_{j=1}^k\left|\frac{\sum_{i=1}^N\mathbb{I}\{q(x_i)\in\mathbb{B}_j\}}{ \vert \mathbb{B}_j \vert } - \theta_j\right|\longrightarrow\min\limits_{(\theta_1,\ldots,\theta_k)}
+$$
