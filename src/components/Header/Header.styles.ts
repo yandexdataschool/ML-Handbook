@@ -4,7 +4,9 @@ import findImage from './images/Find.svg';
 
 export const Header = styled.header`
   background-color: rgba(255, 255, 255, 1);
+  position: fixed;
   display: flex;
+  width: 100%;
   min-height: 52px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
 `;

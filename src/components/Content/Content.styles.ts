@@ -4,6 +4,7 @@ import contentImage from './images/rectangle.jpg';
 import coverImage from './images/penguins.png';
 
 export const Content = styled.section`
+  margin-top: 60px;
   max-width: 1140px;
 `;
 

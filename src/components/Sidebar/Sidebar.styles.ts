@@ -11,6 +11,7 @@ const Sidebar = styled.div`
   width: 100%;
   max-width: 300px;
   position: relative;
+  margin-top: 60px;
 
   @media only screen and (max-width: 1140px) {
     display: none;
