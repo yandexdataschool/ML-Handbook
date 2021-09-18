@@ -1,5 +1,11 @@
 {
-  "include": ["./src/**/*", "babel.config.js"],
+  "include": [
+    "./src/**/*",
+    "babel.config.js",
+    "gatsby-browser.js",
+    "tailwind.config.js",
+    "postcss.config.js"
+  ],
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
