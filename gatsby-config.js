@@ -65,6 +65,14 @@ module.exports = {
           articles: require.resolve("./src/components/ArticleLayout/ArticleLayout.tsx"),
           default: require.resolve("./src/components/Layout/Layout.tsx"),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              terminal: "none",
+            },
+          },
+        ],
       },
     },
     `gatsby-plugin-styled-components`,
@@ -78,5 +86,6 @@ module.exports = {
         defer: false,
       },
     },
+    `gatsby-plugin-styled-components`,
   ],
 };

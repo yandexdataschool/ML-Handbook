@@ -39,70 +39,6 @@ export const Content = ({ children }: Props) => {
               <Styles.ArticleAuthor>
                 <Styles.AuthorsPhoto />
                 <Styles.AuthorsName>
-                  Артемий
-                  <br />
-                  Михеев
-                </Styles.AuthorsName>
-              </Styles.ArticleAuthor>
-              <Styles.ArticleAuthor>
-                <Styles.AuthorsPhoto />
-                <Styles.AuthorsName>
-                  Артемий
-                  <br />
-                  Михеев
-                </Styles.AuthorsName>
-              </Styles.ArticleAuthor>
-              <Styles.ArticleAuthor>
-                <Styles.AuthorsPhoto />
-                <Styles.AuthorsName>
-                  Артемий
-                  <br />
-                  Михеев
-                </Styles.AuthorsName>
-              </Styles.ArticleAuthor>
-              <Styles.ArticleAuthor>
-                <Styles.AuthorsPhoto />
-                <Styles.AuthorsName>
-                  Артемий
-                  <br />
-                  Михеев
-                </Styles.AuthorsName>
-              </Styles.ArticleAuthor>
-              <Styles.ArticleAuthor>
-                <Styles.AuthorsPhoto />
-                <Styles.AuthorsName>
-                  Артемий
-                  <br />
-                  Михеев
-                </Styles.AuthorsName>
-              </Styles.ArticleAuthor>
-              <Styles.ArticleAuthor>
-                <Styles.AuthorsPhoto />
-                <Styles.AuthorsName>
-                  Артемий
-                  <br />
-                  Михеев
-                </Styles.AuthorsName>
-              </Styles.ArticleAuthor>
-              <Styles.ArticleAuthor>
-                <Styles.AuthorsPhoto />
-                <Styles.AuthorsName>
-                  Артемий
-                  <br />
-                  Михеев
-                </Styles.AuthorsName>
-              </Styles.ArticleAuthor>
-              <Styles.ArticleAuthor>
-                <Styles.AuthorsPhoto />
-                <Styles.AuthorsName>
-                  Артемий
-                  <br />
-                  Михеев
-                </Styles.AuthorsName>
-              </Styles.ArticleAuthor>
-              <Styles.ArticleAuthor>
-                <Styles.AuthorsPhoto />
-                <Styles.AuthorsName>
                   Федот
                   <br />
                   Станиславский
@@ -114,22 +50,6 @@ export const Content = ({ children }: Props) => {
                   Константин
                   <br />
                   Константиновский
-                </Styles.AuthorsName>
-              </Styles.ArticleAuthor>
-              <Styles.ArticleAuthor>
-                <Styles.AuthorsPhoto />
-                <Styles.AuthorsName>
-                  Константин
-                  <br />
-                  Константиновский
-                </Styles.AuthorsName>
-              </Styles.ArticleAuthor>
-              <Styles.ArticleAuthor>
-                <Styles.AuthorsPhoto />
-                <Styles.AuthorsName>
-                  Константин
-                  <br />
-                  Константи-новский
                 </Styles.AuthorsName>
               </Styles.ArticleAuthor>
             </Styles.AuthorsList>

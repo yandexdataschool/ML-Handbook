@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import '../../styles/typography.css';
 
 export const Page = styled.div`
   font-family: 'YS Text', georgia, serif;
