@@ -29,6 +29,12 @@ const SidebarContent = styled.div`
   height: calc(100vh - 100px);
   max-width: 300px;
   z-index: 1;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const SidebarCloseBtn = styled.button`
