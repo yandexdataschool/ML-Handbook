@@ -7,12 +7,12 @@ type Props = {
 };
 
 const Sidebar = styled.div`
-  flex-grow: 1;
-  flex-basis: 300px;
-  min-width: 300px;
-  align-self: start;
   position: sticky;
   top: 52px;
+  align-self: start;
+  flex-basis: 300px;
+  flex-grow: 1;
+  min-width: 300px;
 
   @media only screen and (max-width: 1140px) {
     display: none;
@@ -21,8 +21,8 @@ const Sidebar = styled.div`
 
 const SidebarContent = styled.div`
   overflow-y: scroll;
-  height: calc(100vh - 52px);
   padding: 24px 40px 40px 20px;
+  height: calc(100vh - 52px);
 `;
 
 const SidebarCloseBtn = styled.button`
@@ -44,11 +44,11 @@ const SidebarCloseBtn = styled.button`
 
 const SidebarHeading = styled.h3`
   margin: 0;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
-  font-family: 'YandexSerif', Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Yandex Serif', Georgia, 'Times New Roman', Times, serif;
   line-height: 20px;
   cursor: pointer;
   transition: opacity 0.2s ease-in;
@@ -61,19 +61,22 @@ const SidebarHeading = styled.h3`
 const SidebarItem = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 6px;
 `;
 
 const SidebarList = styled.ul`
   margin: 0;
-  padding: 0 0 0 16px;
+  padding: 0 0 0 22px;
+  list-style: disc;
 `;
 
 const SidebarListItem = styled.li`
   margin-bottom: 6px;
   color: #3b4856;
-  font-weight: 300;
+  font-weight: 400;
+  font-style: normal;
   font-size: 15px;
-  font-family: 'YandexSans', Arial, Helvetica, sans-serif;
+  font-family: 'YS Text', Arial, Helvetica, sans-serif;
   line-height: 18px;
   cursor: pointer;
   transition: opacity 0.2s ease-in;
@@ -103,7 +106,8 @@ const SidebarListItem = styled.li`
 
 const SidebarSublist = styled.ul`
   margin: 0;
-  padding: 0 0 0 22px;
+  padding: 0 0 0 16px;
+  list-style: circle;
 `;
 
 const SidebarSublistItem = styled.li`
