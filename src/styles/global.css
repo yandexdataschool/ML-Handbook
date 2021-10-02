@@ -4,43 +4,59 @@
 
 @layer base {
   @font-face {
-    font-family: 'YS Text';
-    font-style: normal;
     font-weight: 400;
+    font-style: normal;
+    font-family: 'YS Text';
     src: url('../fonts/YS_Text_Regular.woff2') format('woff2'),
       url('../fonts/YS_Text_Regular.woff') format('woff');
   }
 
   @font-face {
-    font-family: 'YS Text';
-    font-style: normal;
     font-weight: 500;
+    font-style: normal;
+    font-family: 'YS Text';
     src: url('../fonts/YS_Text_Medium.woff2') format('woff2'),
       url('../fonts/YS_Text_Medium.woff') format('woff');
   }
 
   @font-face {
-    font-family: 'YS Text';
-    font-style: normal;
     font-weight: 700;
+    font-style: normal;
+    font-family: 'YS Text';
     src: url('../fonts/YS_Text_Bold.woff2') format('woff2'),
       url('../fonts/YS_Text_Bold.woff') format('woff');
   }
 
   @font-face {
-    font-family: 'YS Text';
-    font-style: italic;
     font-weight: 400;
+    font-style: italic;
+    font-family: 'YS Text';
     src: url('../fonts/YS_Text_Regular_Italic.woff2') format('woff2'),
       url('../fonts/YS_Text_Regular_Italic.woff') format('woff');
   }
 
   @font-face {
-    font-family: 'YS Text';
-    font-style: italic;
     font-weight: 700;
+    font-style: italic;
+    font-family: 'YS Text';
     src: url('../fonts/YS_Text_Bold_Italic.woff2') format('woff2'),
       url('../fonts/YS_Text_Bold_Italic.woff') format('woff');
+  }
+
+  @font-face {
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Yandex Serif';
+    src: url('../fonts/Yandex_Serif_Regular.woff2') format('woff2'),
+      url('../fonts/Yandex_Serif_Regular.woff') format('woff');
+  }
+
+  @font-face {
+    font-weight: 900;
+    font-style: normal;
+    font-family: 'Yandex Serif';
+    src: url('../fonts/Yandex_Serif_Black.woff2') format('woff2'),
+      url('../fonts/Yandex_Serif_Black.woff') format('woff');
   }
 
   h1 {
