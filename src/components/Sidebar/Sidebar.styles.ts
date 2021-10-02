@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import closeBtn from '../../images/Sidebar-close.svg';
+import closeBtn from '../../images/sidebar-close.svg';
 
 type Props = {
   current?: boolean;
