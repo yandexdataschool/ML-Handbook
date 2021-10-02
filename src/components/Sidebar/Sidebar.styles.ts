@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 
-import closeBtn from '../../images/sidebar-close.svg';
+import closeBtn from '../../images/Sidebar-close.svg';
 
 type Props = {
   current?: boolean;
 };
 
 const Sidebar = styled.div`
-  display: flex;
-  width: 100%;
-  max-width: 300px;
-  position: relative;
-  margin-top: 60px;
+  flex-grow: 1;
+  flex-basis: 300px;
+  min-width: 300px;
+  align-self: start;
+  position: sticky;
+  top: 52px;
 
   @media only screen and (max-width: 1140px) {
     display: none;
@@ -19,26 +20,13 @@ const Sidebar = styled.div`
 `;
 
 const SidebarContent = styled.div`
-  position: fixed;
-  display: flex;
-  overflow: scroll;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding: 24px 40px 0 20px;
-  width: 100%;
-  height: calc(100vh - 100px);
-  max-width: 300px;
-  z-index: 1;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  overflow-y: scroll;
+  height: calc(100vh - 52px);
+  padding: 24px 40px 40px 20px;
 `;
 
 const SidebarCloseBtn = styled.button`
-  /* position: absolute; */
+  position: absolute;
   top: 16px;
   right: 16px;
   width: 14px;
@@ -113,12 +101,12 @@ const SidebarListItem = styled.li`
   `}
 `;
 
-const SideBarSublist = styled.ul`
+const SidebarSublist = styled.ul`
   margin: 0;
   padding: 0 0 0 22px;
 `;
 
-const SideBarSublistItem = styled.li`
+const SidebarSublistItem = styled.li`
   margin-bottom: 6px;
   color: #3b4856;
   font-weight: 300;
@@ -159,6 +147,6 @@ export {
   SidebarHeading,
   SidebarList,
   SidebarListItem,
-  SideBarSublist,
-  SideBarSublistItem,
+  SidebarSublist,
+  SidebarSublistItem,
 };

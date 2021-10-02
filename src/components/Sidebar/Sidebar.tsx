@@ -25,13 +25,13 @@ export const Sidebar = () => {
             <Styles.SidebarListItem>Первый пункт, который длинный и не влезает на одну строчку</Styles.SidebarListItem>
             <Styles.SidebarListItem>Второй пункт в одну строку</Styles.SidebarListItem>
             <Styles.SidebarListItem>Третий пункт c подпунктами:</Styles.SidebarListItem>
-            <Styles.SideBarSublist>
-              <Styles.SideBarSublistItem>Четвёртый пункт</Styles.SideBarSublistItem>
-              <Styles.SideBarSublistItem>
+            <Styles.SidebarSublist>
+              <Styles.SidebarSublistItem>Четвёртый пункт</Styles.SidebarSublistItem>
+              <Styles.SidebarSublistItem>
                 Пятый пункт аж в три строки, ну мало ли бывает такое чудо, что нельзя сократить заголовок
-              </Styles.SideBarSublistItem>
-              <Styles.SideBarSublistItem>Шестой пункт</Styles.SideBarSublistItem>
-            </Styles.SideBarSublist>
+              </Styles.SidebarSublistItem>
+              <Styles.SidebarSublistItem>Шестой пункт</Styles.SidebarSublistItem>
+            </Styles.SidebarSublist>
             <Styles.SidebarListItem>Первый пункт, который длинный и не влезает на одну строчку</Styles.SidebarListItem>
             <Styles.SidebarListItem>
               Пятый пункт аж в три строки, ну мало ли бывает такое чудо, что нельзя сократить заголовок
