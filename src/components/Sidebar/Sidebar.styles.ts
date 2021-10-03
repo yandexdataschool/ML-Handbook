@@ -35,10 +35,10 @@ const SidebarCloseBtn = styled.button`
   border: none;
   background: center/cover no-repeat url(${closeBtn});
   cursor: pointer;
-  transition: opacity 0.2s ease-in;
+  transition: text-decoration 0.2s ease-in;
 
   &:hover {
-    opacity: 0.6;
+    text-decoration: underline;
   }
 `;
 
@@ -73,16 +73,16 @@ const SidebarList = styled.ul`
 const SidebarListItem = styled.li`
   margin-bottom: 6px;
   color: #3b4856;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
   font-size: 15px;
   font-family: 'YS Text', Arial, Helvetica, sans-serif;
   line-height: 18px;
   cursor: pointer;
-  transition: opacity 0.2s ease-in;
+  transition: text-decoration 0.2s ease-in;
 
   &:hover {
-    opacity: 0.6;
+    text-decoration: underline;
   }
 
   ${({ current }: Props) =>
@@ -115,13 +115,13 @@ const SidebarSublistItem = styled.li`
   color: #3b4856;
   font-weight: 300;
   font-size: 15px;
-  font-family: 'YandexSans', Arial, Helvetica, sans-serif;
+  font-family: 'YS Text', Arial, Helvetica, sans-serif;
   line-height: 18px;
   cursor: pointer;
-  transition: opacity 0.2s ease-in;
+  transition: text-decoration 0.2s ease-in;
 
   &:hover {
-    opacity: 0.6;
+    text-decoration: underline;
   }
 
   ${({ current }: Props) =>
