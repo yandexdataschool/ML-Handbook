@@ -4,36 +4,67 @@
   </a>
 </p>
 <h1 align="center">
-  ML Handbook (Gatsby minimal starter)
+  Учебник по машинному обучению
 </h1>
 
-## 🚀 Quick start
+## 🚀 Как работать с проектом?
 
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+1. **Склонируйте репозиторий.**
 
     ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
+    git clone git@github.com:yandexdataschool/ML-Handbook.git
     ```
 
-2.  **Start developing.**
+2. **Запустите локально.**
 
-    Navigate into your new site’s directory and start it up.
+    Перейдите в каталог сайта и запустите его.
 
     ```shell
-    cd my-gatsby-site/
+    cd ml-handbook/
     npm run develop
     ```
 
-3.  **Open the code and start customizing!**
+3. **Откройте редактор и начните работу!**
 
-    Your site is now running at http://localhost:8000!
+    Сайт теперь работает на http://localhost:8000!
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+    Отредактируйте любой файл в папке `./src` чтобы видеть обновление сайта в режиме реального времени!
 
-4.  **Learn more**
+
+4. **Работа с контентом**
+
+    Контент страниц находится в папке `./src/pages/chapters/*` и повторяет такую же структуру для страниц сайта.
+    Т.е., например, страница из `./src/pages/chapters/intro.mdx` будет доступна по адресу
+   `http://localhost:8000/chapters/intro`.
+
+    Или, например, `./src/pages/chapters/ansamblees/intro.mdx` будет доступна по адресу
+   `http://localhost:8000/chapters/ansamblees/intro`.
+
+    Файлы должны иметь расширение `*.mdx`. MDX – это расширенный формат для маркдауна.
+    Он позволяет использовать интерактивные (`React`) компоненты прямо внутри маркдаун разметки.
+    Это упрощает работу с содержимым. Инструкция по тому, какие компоненты можно использовать внутри MDX будет чуть
+   позже.
+
+    В начале каждого MDX-файла есть раздел, который называется frontmatter:
+    ```
+    ---
+    title: Ансамбли в машинном обучении
+    author: pavel_gubko
+    ---
+    ```
+    В нём мы указываем название и автора. Позже появится еще изображение. Содержание статьи будет строиться на
+   основе заголовков.
+
+    В остальном — это самый обычный markdown.
+
+    Так как сейчас подключен Netlify, то при создании PR автоматически собирается превью того, что было сделано.
+    Рекомендую использовать эту возможность, создавать ветки из `develop` и делать PR на каждую ветку.
+    После merge в `develop` или `main` на Github – автоматически происходит сборка проекта и его деплой.
+
+    Чтобы получить доступ к превью каждого PR – запросите доступ к Netlify у Дарьи Данилюк или Анастасии Павловской.
+
+
+5. **Документация к Gatsby**
 
     - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
@@ -46,9 +77,3 @@
     - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
     - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
