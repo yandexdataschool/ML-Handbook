@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Школа Анализа Данных" src="./shad.png" width="60" />
+  <img alt="Школа Анализа Данных" src="./shad.png" height="250" />
 </p>
 <h1 align="center">
   Учебник по машинному обучению «Школы Анализа Данных»
