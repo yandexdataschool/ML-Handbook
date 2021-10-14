@@ -43,9 +43,7 @@ export const Sidebar = () => {
           <Styles.SidebarList>
             <Styles.SidebarListItem>Первый пункт, который длинный и не влезает на одну строчку</Styles.SidebarListItem>
             <Styles.SidebarListItem>Второй пункт в одну строку</Styles.SidebarListItem>
-            <Styles.SidebarListItem current>
-              Третий пункт, который длинный и не влезает в стртоку
-            </Styles.SidebarListItem>
+            <Styles.SidebarListItem>Третий пункт, который длинный и не влезает в стртоку</Styles.SidebarListItem>
             <Styles.SidebarListItem>Четвёртый пункт</Styles.SidebarListItem>
             <Styles.SidebarListItem>
               Пятый пункт аж в три строки, ну мало ли бывает такое чудо, что нельзя сократить заголовок

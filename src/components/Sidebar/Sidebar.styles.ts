@@ -2,10 +2,6 @@ import styled from 'styled-components';
 
 import closeBtn from '../../images/sidebar-close.svg';
 
-type Props = {
-  current?: boolean;
-};
-
 const Sidebar = styled.div`
   position: sticky;
   top: 52px;
@@ -85,9 +81,7 @@ const SidebarListItem = styled.li`
     text-decoration: underline;
   }
 
-  ${({ current }: Props) =>
-    current &&
-    `
+  &:active {
     position: relative;
     text-decoration: underline;
     font-weight: 400;
@@ -100,8 +94,7 @@ const SidebarListItem = styled.li`
       height: 100%;
       background-color: #FFC100;
       content: '';
-    }
-  `}
+  }
 `;
 
 const SidebarSublist = styled.ul`
@@ -124,9 +117,7 @@ const SidebarSublistItem = styled.li`
     text-decoration: underline;
   }
 
-  ${({ current }: Props) =>
-    current &&
-    `
+  &:active {
     position: relative;
     text-decoration: underline;
     font-weight: 400;
@@ -137,10 +128,10 @@ const SidebarSublistItem = styled.li`
       left: -58px;
       width: 4px;
       height: 100%;
-      background-color: #FFC100;
+      background-color: #ffc100;
       content: '';
     }
-  `}
+  }
 `;
 
 export {
