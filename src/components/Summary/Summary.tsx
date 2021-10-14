@@ -1,5 +1,7 @@
 import React from 'react';
 
+import * as Styles from './Summary.styles';
+
 interface SummaryProps {
   label: string;
   children: React.ReactNode;
@@ -7,10 +9,10 @@ interface SummaryProps {
 
 const Summary = ({ label, children }: SummaryProps) => {
   return (
-    <details>
-      <summary>{label}</summary>
-      {children}
-    </details>
+    <Styles.Details>
+      <Styles.Summary>{label}</Styles.Summary>
+      <Styles.Content>{children}</Styles.Content>
+    </Styles.Details>
   );
 };
 

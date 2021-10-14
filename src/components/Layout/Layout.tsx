@@ -46,6 +46,7 @@ const shortcodes = {
   a: ({ href, children }: LinkProps) => <Link href={href}>{children}</Link>,
   Summary,
   MathInline,
+  MathBlock,
 };
 
 const Layout = ({ children }: Props) => {
