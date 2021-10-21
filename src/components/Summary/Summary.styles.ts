@@ -36,6 +36,10 @@ const Summary = styled.summary`
   list-style: none;
   cursor: pointer;
 
+  &::-webkit-details-marker {
+    display: none;
+  }
+
   &::before {
     content: '►';
     font-size: 13px;
