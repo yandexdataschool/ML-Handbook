@@ -8,6 +8,7 @@ import { Footer } from '../Footer/Footer';
 import MathBlock from '../MathBlock/MathBlock';
 import MathInline from '../MathInline/MathInline';
 import Link from '../Link/Link';
+import Summary from '../Summary/Summary';
 
 import * as Styles from './Layout.styles';
 
@@ -18,6 +19,7 @@ type Props = {
 };
 
 type MathProps = {
+  className: string;
   children: React.ReactNode;
 };
 
@@ -27,9 +29,24 @@ type LinkProps = {
 };
 
 const shortcodes = {
-  div: ({ children }: MathProps) => <MathBlock>{children}</MathBlock>,
-  span: ({ children }: MathProps) => <MathInline>{children}</MathInline>,
+  div: ({ className, children }: MathProps) => {
+    if (className?.includes('math-display')) {
+      return <MathBlock>{children}</MathBlock>;
+    }
+
+    return <div>{children}</div>;
+  },
+  span: ({ className, children }: MathProps) => {
+    if (className?.includes('math-inline')) {
+      return <MathInline>{children}</MathInline>;
+    }
+
+    return <span>{children}</span>;
+  },
   a: ({ href, children }: LinkProps) => <Link href={href}>{children}</Link>,
+  Summary,
+  MathInline,
+  MathBlock,
 };
 
 const Layout = ({ children }: Props) => {

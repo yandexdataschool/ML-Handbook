@@ -1,27 +1,28 @@
 ---
-title: Введение
-author: Иван Царевич
+title: Summary Test
+author: Khizrim
 ---
 
-# Hello, _world_!
+# Summary component output testing
 
-Below is an example of JSX embedded in Markdown. <br /> **Try and change
-the background color!**
+Trying if it's working correctly
 
-<div style={{ padding: '20px', backgroundColor: 'red' }}>
-  <h3>This is JSX</h3>
-</div>
+<Summary
+  label={
+    <span>
+      The only way I found to pass formulas to the label is this — <MathInline>f</MathInline>.
+    </span>
+  }
+>
+There's some content with a simple formulas in it. But there's no way to put a
+list in it. Tailwinds resets all the list styles to none. Let's try:
 
-```python
-import nn
+1.  Let's try to put here some block formul
+    $$
+    \tag*{5} h = e([x^0, \ldots, x^n]; \mathbf{\theta}_e).
+    $$
+2.  And inline one here — $h \in \mathbb{H}$
+3.  Three
+4.  And nothing
 
-X, y = get_data() # читаем данные, X - матрица, y - вектор
-w = nn.Matrix(X.shape()[0], 1) # вектор весов модели
-
-for i in range(100): # итерации градиентного спуска
-    p = nn.sigmoid(nn.dot(w, x)) # предсказание модели. Обратите внимание, что собственно нейросеть задана именно в этой строчке
-    loss = nn.logloss(p, y) # считаем ошибку
-
-    dw = nn.grad(loss, w) # авторы библиотеки уже запрограммировали для нас backpropagation, а не только вычисление градиента
-    w -= 1e-4 * dw  # обновление весов модели 1e-4 -- learning rate
-```
+</Summary>
