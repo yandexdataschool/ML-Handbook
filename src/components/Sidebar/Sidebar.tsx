@@ -3,10 +3,16 @@ import React from 'react';
 import * as Styles from './Sidebar.styles';
 
 export const Sidebar = () => {
+  const [isOpened, setIsOpened] = React.useState(localStorage.getItem('menuState') || 'false');
+
+  React.useEffect(() => {
+    localStorage.setItem('menuState', String(isOpened));
+  }, [isOpened]);
+
   return (
     <Styles.Sidebar>
-      <Styles.SidebarContent>
-        <Styles.SidebarCloseBtn />
+      <Styles.SidebarMenuBtn onClick={() => setIsOpened(isOpened === 'false' ? 'true' : 'false')} isOpened={isOpened} />
+      <Styles.SidebarContent isOpened={isOpened}>
         <Styles.SidebarItem>
           <Styles.SidebarHeading>Заголовок в две строки и переносом</Styles.SidebarHeading>
           <Styles.SidebarList>

@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 
+import menuBtn from '../../images/sidebar-menu.svg';
 import closeBtn from '../../images/sidebar-close.svg';
+
+type Props = {
+  isOpened?: string;
+};
 
 const Sidebar = styled.div`
   position: sticky;
   top: 52px;
   align-self: start;
-  flex-basis: 300px;
-  flex-grow: 1;
-  min-width: 300px;
+  width: auto;
+  min-width: 60px;
 
   @media only screen and (max-width: 1140px) {
     display: none;
@@ -16,9 +20,35 @@ const Sidebar = styled.div`
 `;
 
 const SidebarContent = styled.div`
+  display: ${({ isOpened }: Props) => (isOpened === 'true' ? 'block' : 'none')};
   overflow-y: scroll;
   padding: 24px 40px 40px 20px;
   height: calc(100vh - 52px);
+  max-width: ${({ isOpened }: Props) => (isOpened === 'true' ? '300px' : '60px')};
+  flex-grow: 1;
+`;
+
+const SidebarMenuBtn = styled.button`
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 14px;
+  height: 14px;
+  outline: none;
+  border: none;
+  background: center/cover no-repeat url(${menuBtn});
+  cursor: pointer;
+  transition: text-decoration 0.2s ease-in;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  ${({ isOpened }: Props) =>
+    isOpened === 'true' &&
+    `
+      background: center/cover no-repeat url(${closeBtn});
+    `}
 `;
 
 const SidebarCloseBtn = styled.button`
@@ -29,7 +59,6 @@ const SidebarCloseBtn = styled.button`
   height: 14px;
   outline: none;
   border: none;
-  background: center/cover no-repeat url(${closeBtn});
   cursor: pointer;
   transition: text-decoration 0.2s ease-in;
 
@@ -137,6 +166,7 @@ const SidebarSublistItem = styled.li`
 export {
   Sidebar,
   SidebarContent,
+  SidebarMenuBtn,
   SidebarCloseBtn,
   SidebarItem,
   SidebarHeading,
