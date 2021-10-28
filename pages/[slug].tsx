@@ -8,7 +8,6 @@ import { GetStaticPathsResult } from "next";
 import Head from "next/head";
 
 /* Remark plugins */
-import remarkToc from "remark-toc";
 import remarkMath from "remark-math";
 import { remarkMdxImages } from "remark-mdx-images";
 
@@ -88,7 +87,7 @@ export async function getStaticProps({ params: { slug } }) {
   const { code } = await bundleMDX(content, {
     cwd: postPath,
     xdmOptions: (options) => {
-      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkToc, remarkMath, remarkMdxImages];
+      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkMath, remarkMdxImages];
       options.rehypePlugins = [...(options.rehypePlugins ?? []), rehypeSlug, rehypeToc, rehypeKatex];
 
       return options;
