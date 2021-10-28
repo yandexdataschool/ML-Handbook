@@ -7,17 +7,25 @@ import { useMemo } from "react";
 import { GetStaticPathsResult } from "next";
 import Head from "next/head";
 
+/* Remark plugins */
+import remarkToc from "remark-toc";
 import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
 import { remarkMdxImages } from "remark-mdx-images";
+
+/* Rehype plugins */
+import rehypeKatex from "rehype-katex";
+import rehypeSlug from "rehype-slug";
+import rehypeToc from "@jsdevtools/rehype-toc";
 
 import { bundleMDX } from "mdx-bundler";
 import { getMDXComponent } from "mdx-bundler/client";
 
+/* Components */
 import { Layout } from "@/components/Layout/Layout";
 import { CustomLink } from "@/components/CustomLink/CustomLink";
 import { Details } from "@/components/Details/Details";
 import { Example } from "@/components/Example/Example";
+import { ToC } from "@/components/ToC/ToC";
 
 if (process.platform === "win32") {
   process.env.ESBUILD_BINARY_PATH = path.join(process.cwd(), "node_modules", "esbuild", "esbuild.exe");
@@ -32,6 +40,7 @@ if (process.platform === "win32") {
 const components = {
   a: CustomLink,
   details: Details,
+  nav: ToC,
   Example,
 };
 
@@ -72,13 +81,13 @@ export async function getStaticProps({ params: { slug } }) {
   const postFilePath = path.join(postPath, "_test.mdx");
   const source = fs.readFileSync(postFilePath);
 
-  const { content, data } = matter(source);
+  const { content, data: frontMatter } = matter(source);
 
   const { code } = await bundleMDX(content, {
     cwd: postPath,
     xdmOptions: (options) => {
-      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkMath, remarkMdxImages];
-      options.rehypePlugins = [...(options.rehypePlugins ?? []), rehypeKatex];
+      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkToc, remarkMath, remarkMdxImages];
+      options.rehypePlugins = [...(options.rehypePlugins ?? []), rehypeSlug, rehypeToc, rehypeKatex];
 
       return options;
     },
@@ -95,6 +104,6 @@ export async function getStaticProps({ params: { slug } }) {
   });
 
   return {
-    props: { code, frontMatter: data },
+    props: { code, frontMatter },
   };
 }
