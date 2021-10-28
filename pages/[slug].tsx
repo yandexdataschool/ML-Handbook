@@ -77,6 +77,8 @@ export function getStaticPaths(): GetStaticPathsResult {
 }
 
 export async function getStaticProps({ params: { slug } }) {
+  const imagesRelativePath = path.join("images");
+  const publicPath = path.join(process.cwd(), "public", imagesRelativePath);
   const postPath = path.join(process.cwd(), "handbook", "intro");
   const postFilePath = path.join(postPath, "_test.mdx");
   const source = fs.readFileSync(postFilePath);
@@ -92,12 +94,20 @@ export async function getStaticProps({ params: { slug } }) {
       return options;
     },
     esbuildOptions: (options) => {
+      // Set the `outdir` to a public location for this bundle.
+      options.outdir = publicPath;
       options.loader = {
         ...options.loader,
-        ".png": "dataurl",
-        ".jpg": "dataurl",
-        ".svg": "dataurl",
+        // Tell esbuild to use the `file` loader for pngs
+        ".png": "file",
+        ".jpg": "file",
+        ".svg": "file",
       };
+      // Set the public path
+      options.publicPath = imagesRelativePath;
+
+      // Set write to true so that esbuild will output the files.
+      options.write = true;
 
       return options;
     },
