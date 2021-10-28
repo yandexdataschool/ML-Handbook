@@ -1,0 +1,76 @@
+---
+title: "Введение"
+hero_image: "./anthony-duran-eLUBGqKGdE4-unsplash.jpg"
+hero_image_alt: "A grey and white pitbull wading happily in a pool"
+authors: stanislav-fedotov
+---
+
+# Heading (rank 1)
+
+## Heading 2
+
+### 3
+
+#### 4
+
+##### 5
+
+###### 6
+
+> Block quote
+
+- Unordered
+- List
+
+1. Ordered
+2. List
+
+A paragraph, introducing a thematic break:
+
+---
+
+```js
+some.code();
+```
+
+a [link](https://example.com), an ![image](./images/anthony-duran-eLUBGqKGdE4-unsplash.jpg), some _emphasis_,
+something **strong**, and finally a little `code()`.
+
+![Регрессия](./images/regression.svg)
+
+![Классификация](./images/classification.svg)
+
+$$ p(y \vert X, w) = p(y_1 \vert x_1, w) \cdot\ldots\cdot p(y_i \vert x_i, w) $$
+
+$$ \log{p(y \vert X,w)} = -\frac{N}{2\log(2\pi\sigma^2)} - \frac{1}{2\sigma^2}(y - Xw)^T(y - Xw) $$
+
+$$ l(X, y) = -\sum\_{i=1}^N(y_i\log(\sigma(\langle w, x_i\rangle)) + (1 - y_i)\log(1 - \sigma(\langle w, x_i\rangle))) $$
+
+$$ \sum\_{i=1}^N\left(\vphantom{\frac12}y_i\log{q(x_i)} + (1 - y_i)\log(1 - q(x_i))\right) $$
+
+$$ \sum*{j=1}^k\left|\frac{\sum*{i=1}^N\mathbb{I}{q(x_i)\in\mathbb{B}\_j}}{ \vert \mathbb{B}j \vert } - \theta_j\right|\longrightarrow\min\limits{(\theta_1,\ldots,\theta_k)} $$
+
+$$
+MAE(y) = L(y) = \frac1n\sum\limits_{i=1}^n |f(x_i) - y_i| \rightarrow \min\limits_f
+$$
+
+где $$f$$ – это модель (та самая, $$f(x) = c$$), $$x_1,\ldots,x_n$$ – обучающие примеры (те данные о квартирах, которые мы смогли достать), $$y_1,\ldots,y_n$$ – правильные ответы (то есть цены на известные нам квартиры). Так как предсказание модели константное, по нему легко можно взять производную, которую мы приравняем к нулю, чтобы найти оптимальное значение $$c$$:
+
+<Example>Example component</Example>
+
+<details>
+  <summary>Ответ (не открывайте сразу; сначала подумайте сами!)</summary>
+
+Конечно, даже в каждом из этих, довольно частных случаев могут быть разные ситуации и разные метрики, но вот как,
+например, можно было бы ответить:
+
+- Обычный год в обычном терапевтическом отделении обычной больницы м тогда главного врача вполне устроит, если доля
+  правильно поставленных диагнозов будет высокой (эта метрика называется accuracy);
+
+- Определение очень унизительной болезни, которая жутким клеймом падёт на каждого, кому поставили такой диагноз –
+  тогда нам важно максимизировать долю действительно больных среди тех, кому мы имели несчастье поставить этот диагноз
+  (эта метрика называется точностью, или precision);
+
+- Определение опасной и очень заразной болезни – тогда нам важно не пропустить ни одного заражённого, и метрика будет
+  иметь вид доли правильно определённых носителей (эта метрика называется полнотой, или recall).
+  </details>
