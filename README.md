@@ -1,30 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img alt="Школа Анализа Данных" src="./shad.png" height="250" />
+</p>
+<h1 align="center">
+  Учебник по машинному обучению «Школы Анализа Данных»
+</h1>
 
-## Getting Started
+## 🚀 Как работать с проектом?
 
-First, run the development server:
+1. **Склонируйте репозиторий.**
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+   ```shell
+   git clone git@github.com:yandexdataschool/ML-Handbook.git
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Запустите локально.**
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+   Перейдите в каталог сайта и запустите его.
 
-## Learn More
+   ```shell
+   cd ml-handbook/
+   npm run develop
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Откройте редактор и начните работу!**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   Сайт теперь работает на http://localhost:8000!
 
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
+   Отредактируйте любой файл в папке `./src` чтобы видеть обновление сайта в режиме реального времени!
 
-## Deploy on ZEIT Now
+4. **Работа с контентом**
 
-The easiest way to deploy your Next.js app is to use the [ZEIT Now Platform](https://zeit.co/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   Контент страниц находится в папке `./src/pages/chapters/*` и повторяет такую же структуру для страниц сайта.
+   Т.е., например, страница из `./src/pages/chapters/intro.mdx` будет доступна по адресу
+   `http://localhost:8000/chapters/intro`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   Или, например, `./src/pages/chapters/ansamblees/intro.mdx` будет доступна по адресу
+   `http://localhost:8000/chapters/ansamblees/intro`.
+
+   Файлы должны иметь расширение `*.mdx`. MDX – это расширенный формат для маркдауна.
+   Он позволяет использовать интерактивные (`React`) компоненты прямо внутри маркдаун разметки.
+   Это упрощает работу с содержимым. Инструкция по тому, какие компоненты можно использовать внутри MDX будет чуть
+   позже.
+
+   В начале каждого MDX-файла есть раздел, который называется frontmatter:
+
+   ```
+   ---
+   title: Ансамбли в машинном обучении
+   author: pavel_gubko
+   ---
+   ```
+
+   В нём мы указываем название и автора. Позже появится еще изображение. Содержание статьи будет строиться на
+   основе заголовков.
+
+   В остальном — это самый обычный markdown.
+
+   Так как сейчас подключен Netlify, то при создании PR автоматически собирается превью того, что было сделано.
+   Рекомендую использовать эту возможность, создавать ветки из `develop` и делать PR на каждую ветку.
+   После merge в `develop` или `main` на Github – автоматически происходит сборка проекта и его деплой.
+
+   Чтобы получить доступ к превью каждого PR – запросите доступ к Netlify у Дарьи Данилюк или Анастасии Павловской.
+
+5. **Документация к Gatsby**
+
+   - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+   - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+   - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+   - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+   - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+   - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
