@@ -45,7 +45,7 @@ const components = {
   IFrame,
 };
 
-export default function ArticlePage({ code, frontMatter }) {
+export default function ArticlePage({ code, frontMatter, tableOfContents }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
 
   return (
@@ -86,11 +86,22 @@ export async function getStaticProps({ params: { slug } }) {
 
   const { content, data: frontMatter } = matter(source);
 
+  let tableOfContents = null;
   const { code } = await bundleMDX(content, {
     cwd: postPath,
     xdmOptions: (options) => {
       options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkMath, remarkMdxImages];
-      options.rehypePlugins = [...(options.rehypePlugins ?? []), rehypeSlug, rehypeToc, rehypeKatex];
+      options.rehypePlugins = [
+        ...(options.rehypePlugins ?? []),
+        rehypeSlug,
+        [
+          rehypeToc,
+          {
+            customizeTOC: (originalTableOfContents) => (tableOfContents = originalTableOfContents),
+          },
+        ],
+        rehypeKatex,
+      ];
 
       return options;
     },
@@ -115,6 +126,6 @@ export async function getStaticProps({ params: { slug } }) {
   });
 
   return {
-    props: { code, frontMatter },
+    props: { code, frontMatter, tableOfContents },
   };
 }
