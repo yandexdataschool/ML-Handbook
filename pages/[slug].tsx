@@ -25,6 +25,7 @@ import { CustomLink } from "@/components/CustomLink/CustomLink";
 import { Details } from "@/components/Details/Details";
 import { Example } from "@/components/Example/Example";
 import { ToC } from "@/components/ToC/ToC";
+import { IFrame } from "@/components/IFrame/IFrame";
 
 if (process.platform === "win32") {
   process.env.ESBUILD_BINARY_PATH = path.join(process.cwd(), "node_modules", "esbuild", "esbuild.exe");
@@ -37,10 +38,11 @@ if (process.platform === "win32") {
 // to handle import statements. Instead, you must include components in scope
 // here.
 const components = {
-  a: CustomLink,
-  details: Details,
-  nav: ToC,
+  CustomLink,
+  Details,
+  ToC,
   Example,
+  IFrame,
 };
 
 export default function ArticlePage({ code, frontMatter }) {
@@ -78,7 +80,7 @@ export function getStaticPaths(): GetStaticPathsResult {
 export async function getStaticProps({ params: { slug } }) {
   const imagesRelativePath = path.join("images");
   const publicPath = path.join(process.cwd(), "public", imagesRelativePath);
-  const postPath = path.join(process.cwd(), "handbook", "intro");
+  const postPath = path.join(process.cwd(), "handbook", "test");
   const postFilePath = path.join(postPath, "_test.mdx");
   const source = fs.readFileSync(postFilePath);
 
