@@ -26,6 +26,7 @@ import { Details } from "@/components/Details/Details";
 import { Example } from "@/components/Example/Example";
 import { ToC } from "@/components/ToC/ToC";
 import { IFrame } from "@/components/IFrame/IFrame";
+import { Content } from "@/components/Content/Content";
 
 if (process.platform === "win32") {
   process.env.ESBUILD_BINARY_PATH = path.join(process.cwd(), "node_modules", "esbuild", "esbuild.exe");
@@ -55,10 +56,10 @@ export default function ArticlePage({ code, frontMatter, tableOfContents }) {
         <meta name="description" content={frontMatter.description} />
       </Head>
       <main className="container mx-auto max-w-5xl">
-        <section className="prose max-w-max">
+        <Content>
           {/*@ts-ignore*/}
           <Component components={components} />
-        </section>
+        </Content>
       </main>
     </Layout>
   );
