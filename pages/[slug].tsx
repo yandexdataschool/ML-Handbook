@@ -16,7 +16,6 @@ import rehypeKatex from "rehype-katex";
 import rehypeSlug from "rehype-slug";
 import rehypeToc from "@jsdevtools/rehype-toc";
 
-import { bundleMDX } from "mdx-bundler";
 import { getMDXComponent } from "mdx-bundler/client";
 
 /* Components */
@@ -25,12 +24,6 @@ import { CustomLink } from "@/components/CustomLink/CustomLink";
 import { Details } from "@/components/Details/Details";
 import { Example } from "@/components/Example/Example";
 import { ToC } from "@/components/ToC/ToC";
-
-if (process.platform === "win32") {
-  process.env.ESBUILD_BINARY_PATH = path.join(process.cwd(), "node_modules", "esbuild", "esbuild.exe");
-} else {
-  process.env.ESBUILD_BINARY_PATH = path.join(process.cwd(), "node_modules", "esbuild", "bin", "esbuild");
-}
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -76,6 +69,12 @@ export function getStaticPaths(): GetStaticPathsResult {
 }
 
 export async function getStaticProps({ params: { slug } }) {
+  if (process.platform === "win32") {
+    process.env.ESBUILD_BINARY_PATH = path.join(process.cwd(), "node_modules", "esbuild", "esbuild.exe");
+  } else {
+    process.env.ESBUILD_BINARY_PATH = path.join(process.cwd(), "node_modules", "esbuild", "bin", "esbuild");
+  }
+
   const imagesRelativePath = path.join("images");
   const publicPath = path.join(process.cwd(), "public", imagesRelativePath);
   const postPath = path.join(process.cwd(), "handbook", "intro");
@@ -83,6 +82,7 @@ export async function getStaticProps({ params: { slug } }) {
   const source = fs.readFileSync(postFilePath);
 
   const { content, data: frontMatter } = matter(source);
+  const { bundleMDX } = await import("mdx-bundler");
 
   const { code } = await bundleMDX(content, {
     cwd: postPath,
