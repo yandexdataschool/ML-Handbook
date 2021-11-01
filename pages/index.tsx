@@ -77,21 +77,29 @@ export const getStaticProps = () => {
       chapters: [
         {
           title: "Линейные модели",
-          slug: "linear_models/intro",
+          slug: "linear_models",
         },
         {
           title: "Метрические алгоритмы ",
-          slug: "metric_based/intro",
+          slug: "metric_based",
         },
         {
           title: "Деревья решений",
-          slug: "decision_tree/intro",
+          slug: "decision_tree",
+        },
+        {
+          title: "Ансамбли",
+          slug: "decision_tree",
+        },
+        {
+          title: "Градиентный бустинг",
+          slug: "decision_tree",
         },
       ],
     },
     {
       title: "Оценка качества моделей",
-      slug: "model_evaluation/intro",
+      slug: "model_evaluation",
     },
   ];
 
