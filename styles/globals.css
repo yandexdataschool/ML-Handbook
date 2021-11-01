@@ -2,3 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 @import "katex/dist/katex.min.css";
+@import url("../fonts/fonts.css");

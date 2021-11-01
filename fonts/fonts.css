@@ -1,0 +1,63 @@
+@layer base {
+  @font-face {
+    font-weight: 300;
+    font-style: normal;
+    font-family: "Yandex Sans";
+    src: url("../fonts/Yandex_Sans_Light.woff2") format("woff2"), url("../fonts/Yandex_Sans_Light.woff") format("woff");
+  }
+
+  @font-face {
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Yandex Sans";
+    src: url("../fonts/Yandex_Sans_Regular.woff2") format("woff2"),
+      url("../fonts/Yandex_Sans_Regular.woff") format("woff");
+  }
+
+  @font-face {
+    font-weight: 500;
+    font-style: normal;
+    font-family: "Yandex Sans";
+    src: url("../fonts/Yandex_Sans_Medium.woff2") format("woff2"),
+      url("../fonts/Yandex_Sans_Medium.woff") format("woff");
+  }
+
+  @font-face {
+    font-weight: 700;
+    font-style: normal;
+    font-family: "Yandex Sans";
+    src: url("../fonts/Yandex_Sans_Bold.woff2") format("woff2"), url("../fonts/Yandex_Sans_Bold.woff") format("woff");
+  }
+
+  @font-face {
+    font-weight: 400;
+    font-style: italic;
+    font-family: "Yandex Sans";
+    src: url("../fonts/Yandex_Sans_Regular_Italic.woff2") format("woff2"),
+      url("../fonts/Yandex_Sans_Regular_Italic.woff") format("woff");
+  }
+
+  @font-face {
+    font-weight: 700;
+    font-style: italic;
+    font-family: "Yandex Sans";
+    src: url("../fonts/Yandex_Sans_Bold_Italic.woff2") format("woff2"),
+      url("../fonts/Yandex_Sans_Bold_Italic.woff") format("woff");
+  }
+
+  @font-face {
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Yandex Serif";
+    src: url("../fonts/Yandex_Serif_Regular.woff2") format("woff2"),
+      url("../fonts/Yandex_Serif_Regular.woff") format("woff");
+  }
+
+  @font-face {
+    font-weight: 900;
+    font-style: normal;
+    font-family: "Yandex Serif";
+    src: url("../fonts/Yandex_Serif_Black.woff2") format("woff2"),
+      url("../fonts/Yandex_Serif_Black.woff") format("woff");
+  }
+}
