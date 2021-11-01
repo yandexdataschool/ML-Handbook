@@ -8,10 +8,15 @@ const last = (array) => {
 };
 
 export const copyFileToPublic = (filePath: string, additionalPath: string = ""): void => {
-  const fullFilePath = path.join(process.cwd(), filePath);
-  const publicPath = path.join(process.cwd(), "public", additionalPath);
-  const fileName = last(filePath.split("/"));
-  const publicFilePath = path.join(publicPath, fileName);
+  const sourceFilePath = path.join(process.cwd(), filePath);
+  const destinationPublicPath = path.join(process.cwd(), "public", additionalPath);
 
-  fs.copyFileSync(fullFilePath, publicFilePath);
+  if (!fs.existsSync(destinationPublicPath)) {
+    fs.mkdirSync(destinationPublicPath);
+  }
+
+  const fileName = last(filePath.split("/"));
+  const destinationFilePath = path.join(destinationPublicPath, fileName);
+
+  fs.copyFileSync(sourceFilePath, destinationFilePath);
 };
