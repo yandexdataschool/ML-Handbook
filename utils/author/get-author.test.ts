@@ -1,7 +1,7 @@
 import mock from "mock-fs";
 import { getAuthor } from "./get-author";
 
-beforeEach(function () {
+beforeEach(() => {
   mock({
     "authors/with-empty-photo": mock.directory({
       items: {

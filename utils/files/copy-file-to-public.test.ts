@@ -2,7 +2,7 @@ import mock from "mock-fs";
 import fs from "fs";
 import { copyFileToPublic } from "./copy-file-to-public";
 
-beforeEach(function () {
+beforeEach(() => {
   mock({
     public: mock.directory({
       items: {

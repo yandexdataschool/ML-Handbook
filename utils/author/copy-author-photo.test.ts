@@ -2,7 +2,7 @@ import mock from "mock-fs";
 import fs from "fs";
 import { copyAuthorPhoto } from "./copy-author-photo";
 
-beforeEach(function () {
+beforeEach(() => {
   mock({
     public: mock.directory({
       items: {
