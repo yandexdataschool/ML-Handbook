@@ -27,5 +27,10 @@ describe("copyFileToPublic", () => {
     expect(fs.existsSync("public/additional-folder/file-name.ext")).toBeTruthy();
     expect(String(fs.readFileSync("public/additional-folder/file-name.ext"))).toBe("content");
   });
+  it("should copy file in additional folder if doesn't exists", () => {
+    copyFileToPublic("folder-name/file-name.ext", "new-folder");
+    expect(fs.existsSync("public/new-folder/file-name.ext")).toBeTruthy();
+    expect(String(fs.readFileSync("public/new-folder/file-name.ext"))).toBe("content");
+  });
 });
 afterEach(mock.restore);
