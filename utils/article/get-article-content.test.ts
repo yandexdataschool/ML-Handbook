@@ -6,9 +6,9 @@ beforeEach(() => {
     authors: {
       "with-photo": {
         "index.md": `---
-name: "With Photo"
-email: "with-photo@email.com"
-photo: "./photo.jpg"
+name: With Photo
+email: with-photo@email.com
+photo: ./photo.jpg
 ---
 `,
       },
@@ -16,18 +16,18 @@ photo: "./photo.jpg"
     handbook: {
       "chapter-name": {
         "index.mdx": `---
-title: "Title"
-description: "Description"
-hero_image: "./photo.jpg"
-hero_image_alt: "A grey and white pitbull wading happily in a pool"
+title: Title
+description: Description
+hero_image: ./photo.jpg
+hero_image_alt: A grey and white pitbull wading happily in a pool
 authors: with-photo
 ---
 Some file content
 `,
         "another-article.mdx": `---
-title: "Title"
-hero_image: "./photo.jpg"
-hero_image_alt: "A grey and white pitbull wading happily in a pool"
+title: Title
+hero_image: ./photo.jpg
+hero_image_alt: A grey and white pitbull wading happily in a pool
 authors: with-photo
 ---
 Some file content
