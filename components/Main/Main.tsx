@@ -5,12 +5,12 @@ import * as Styles from "./Main.styles";
 
 import logo from "../../public/images/shad-logo-full.png";
 
-type Chapter = {
+export type Chapter = {
   title: string;
   slug: string;
 };
 
-type Section = {
+export type Section = {
   title: string;
   slug?: string;
   chapters?: Chapter[];
@@ -47,7 +47,11 @@ const Section = ({ title, slug, chapters }: Section) => {
   );
 };
 
-export const Main = ({ sections }) => {
+type Props = {
+  sections: Section[];
+};
+
+export const Main = ({ sections }: Props) => {
   return (
     <main className="container mx-auto max-w-4xl py-24">
       <div className="max-w-full flex flex-col align-middle">

@@ -1,17 +1,20 @@
 /* Vendor */
 import Head from "next/head";
-import Link from "next/link";
 
 /* Components */
 import { Layout } from "@/components/Layout/Layout";
 import { Header } from "@/components/Header/Header";
-import { Main } from "@/components/Main/Main";
+import { Main, Section } from "@/components/Main/Main";
 import { Footer } from "@/components/Footer/Footer";
 
 /* Table Of Contents*/
 import sections from "../handbook/sections.json";
 
-const Home = ({ sections }) => {
+type Props = {
+  sections: Section[];
+};
+
+const Home = ({ sections }: Props) => {
   return (
     <Layout>
       <Head>
