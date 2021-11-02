@@ -27,7 +27,7 @@ import { getAllArticleSlugs } from "../utils/article/get-all-article-slugs";
 const components = {
   CustomLink,
   Details,
-  ToC,
+  nav: ToC,
   Example,
   IFrame,
 };
