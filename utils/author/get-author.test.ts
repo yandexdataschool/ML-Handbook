@@ -6,8 +6,8 @@ beforeEach(() => {
     "authors/with-empty-photo": mock.directory({
       items: {
         "index.md": `---
-name: "With Empty Photo"
-email: "with-empty-photo@email.com"
+name: With Empty Photo
+email: with-empty-photo@email.com
 photo: ""
 ---
 `,
@@ -16,8 +16,8 @@ photo: ""
     "authors/with-photo": mock.directory({
       items: {
         "index.md": `---
-name: "With Photo"
-email: "with-photo@email.com"
+name: With Photo
+email: with-photo@email.com
 photo: "./photo.jpg"
 ---
 `,
@@ -26,9 +26,9 @@ photo: "./photo.jpg"
     "authors/with-photo-russian": mock.directory({
       items: {
         "index.md": `---
-name: "With Photo Russian"
-email: "with-photo-russian@email.com"
-photo: "./Фото с Пробелами и на русском.JPG"
+name: With Photo Russian
+email: with-photo-russian@email.com
+photo: ./Фото с Пробелами и на русском.JPG
 ---
 `,
       },
@@ -36,8 +36,8 @@ photo: "./Фото с Пробелами и на русском.JPG"
     "authors/without-photo": mock.directory({
       items: {
         "index.md": `---
-name: "Without Photo"
-email: "without-photo@email.com"
+name: Without Photo
+email: without-photo@email.com
 ---
 `,
       },
