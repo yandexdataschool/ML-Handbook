@@ -3,12 +3,19 @@ import { getAuthor, getAuthors } from "./get-author";
 
 beforeEach(() => {
   mock({
+    "authors/with-empty-email": mock.directory({
+      items: {
+        "index.md": `---
+name: With Empty Email
+---
+`,
+      },
+    }),
     "authors/with-empty-photo": mock.directory({
       items: {
         "index.md": `---
 name: With Empty Photo
 email: with-empty-photo@email.com
-photo: ""
 ---
 `,
       },
@@ -45,6 +52,12 @@ email: without-photo@email.com
   });
 });
 describe("getAuthor", () => {
+  it("should return correct author without email", () => {
+    const author = getAuthor("with-empty-email");
+    expect(author.name).toBe("With Empty Email");
+    expect(author.email).toBeNull();
+    expect(author.photo).toBeNull();
+  });
   it("should return correct author without photo", () => {
     const author = getAuthor("without-photo");
     expect(author.name).toBe("Without Photo");

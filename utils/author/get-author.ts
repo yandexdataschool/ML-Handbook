@@ -5,8 +5,8 @@ import slugify from "slugify";
 
 export type Author = {
   name: string;
-  email: string;
-  photo: string;
+  email?: string;
+  photo?: string;
 };
 
 const getPhoto = (authorNickname: string, photo: string): string | null => {
@@ -29,7 +29,7 @@ export const getAuthor = (authorNickname: string): Author => {
 
   return {
     name,
-    email,
+    email: email ?? null,
     photo,
   };
 };
