@@ -6,9 +6,11 @@ beforeEach(() => {
   mock({
     public: mock.directory({
       items: {
-        authors: mock.directory({
-          items: {},
-        }),
+        handbook: {
+          authors: mock.directory({
+            items: {},
+          }),
+        },
       },
     }),
     "authors/with-photo/photo.jpg": mock.file({
@@ -18,9 +20,9 @@ beforeEach(() => {
 });
 describe("copyAuthorPhoto", () => {
   it("should copy author with photo", () => {
-    copyAuthorPhoto("/authors/with-photo/photo.jpg");
-    expect(fs.existsSync("public/authors/with-photo/photo.jpg")).toBeTruthy();
-    expect(String(fs.readFileSync("public/authors/with-photo/photo.jpg"))).toBe("content");
+    copyAuthorPhoto("/handbook/authors/with-photo/photo.jpg");
+    expect(fs.existsSync("public/handbook/authors/with-photo/photo.jpg")).toBeTruthy();
+    expect(String(fs.readFileSync("public/handbook/authors/with-photo/photo.jpg"))).toBe("content");
   });
 });
 afterEach(mock.restore);

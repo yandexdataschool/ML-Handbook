@@ -74,14 +74,14 @@ describe("getAuthor", () => {
     const author = getAuthor("with-photo");
     expect(author.name).toBe("With Photo");
     expect(author.email).toBe("with-photo@email.com");
-    expect(author.photo).toBe("/authors/with-photo/photo.jpg");
+    expect(author.photo).toBe("/handbook/authors/with-photo/photo.jpg");
   });
 
   it("should return correct author with photo file in russian", () => {
     const author = getAuthor("with-photo-russian");
     expect(author.name).toBe("With Photo Russian");
     expect(author.email).toBe("with-photo-russian@email.com");
-    expect(author.photo).toBe("/authors/with-photo-russian/foto-s-probelami-i-na-russkom.jpg");
+    expect(author.photo).toBe("/handbook/authors/with-photo-russian/foto-s-probelami-i-na-russkom.jpg");
   });
   it("should return correct authors (one)", () => {
     const authors = getAuthors("without-photo");
