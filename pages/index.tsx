@@ -89,11 +89,11 @@ export const getStaticProps = () => {
         },
         {
           title: "Ансамбли",
-          slug: "decision_tree",
+          slug: "ensembles",
         },
         {
           title: "Градиентный бустинг",
-          slug: "decision_tree",
+          slug: "grad_boost",
         },
       ],
     },
