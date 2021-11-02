@@ -24,7 +24,7 @@ export const getTransformedArticle = async (slug: string, content: string): Prom
     process.env.ESBUILD_BINARY_PATH = path.join(esbuildPath, "bin", "esbuild");
   }
 
-  const imagesRelativePath = path.join("images");
+  const imagesRelativePath = path.join("handbook", slug, "images");
   const publicPath = path.join(process.cwd(), "public", imagesRelativePath);
   const postPath = path.join(process.cwd(), "handbook", slug);
   console.log(postPath);

@@ -13,7 +13,7 @@ const getPhoto = (authorNickname: string, photo: string): string | null => {
   if (photo) {
     const photoFileName = photo.slice(2).toLowerCase();
 
-    return `/authors/${authorNickname}/${slugify(photoFileName)}`;
+    return `/handbook/authors/${authorNickname}/${slugify(photoFileName)}`;
   }
 
   return null;

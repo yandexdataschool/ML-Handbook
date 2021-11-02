@@ -51,7 +51,7 @@ describe("getArticleContent()", () => {
         {
           email: "with-photo@email.com",
           name: "With Photo",
-          photo: "/authors/with-photo/photo.jpg",
+          photo: "/handbook/authors/with-photo/photo.jpg",
         },
       ],
     });
@@ -70,7 +70,7 @@ describe("getArticleContent()", () => {
         {
           email: "with-photo@email.com",
           name: "With Photo",
-          photo: "/authors/with-photo/photo.jpg",
+          photo: "/handbook/authors/with-photo/photo.jpg",
         },
       ],
     });

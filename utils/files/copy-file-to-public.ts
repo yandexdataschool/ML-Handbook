@@ -12,7 +12,7 @@ export const copyFileToPublic = (filePath: string, additionalPath: string = ""):
   const destinationPublicPath = path.join(process.cwd(), "public", additionalPath);
 
   if (!fs.existsSync(destinationPublicPath)) {
-    fs.mkdirSync(destinationPublicPath);
+    fs.mkdirSync(destinationPublicPath, { recursive: true });
   }
 
   const fileName = last(filePath.split("/"));
