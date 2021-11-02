@@ -36,7 +36,7 @@ const Section = ({ title, slug, chapters }: Section) => {
   return (
     <>
       <Styles.Chapter>
-        <p>{title}</p>
+        <p className="inline-block">{title}</p>
       </Styles.Chapter>
       <ol type="1">
         {chapters.map((chapter) => (
