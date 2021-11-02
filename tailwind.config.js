@@ -1,5 +1,3 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
-
 module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
@@ -8,6 +6,15 @@ module.exports = {
       fontFamily: {
         sans: ["Yandex Sans", "sans-serif"],
         serif: ["Yandex Serif", "serif"],
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            h1: {
+              fontFamily: ["'Yandex Serif', serif"],
+            },
+          },
+        },
       },
     },
   },
