@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Receiver Operating Characteristic (ROC) Curve</title>
+  
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="./roc_auc/roc.js" charset="utf-8"></script>
+    <script src="./roc_auc/normal.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="./roc_auc/roc.css" />
+  </head>
+
+  <body>
+    <div class="plots_container"> 
+      <div class="plots_row">
+        <div id="normal"></div>
+        <div id="roc"></div>
+      </div>
+      <div class="plots_row">
+        <div id="size"></div>
+      </div>
+    </div>
+    
+    <script>
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
+        roc.init("roc", 400, 300, 70);
+        normal.init("normal", [-5, 5], 400, 300, 70);
+      } else {
+        roc.init("roc", 400, 300, 70);
+        normal.init("normal", [-8.3, 8.3], 400, 300, 70);
+      }
+    </script>
+  </body>
+</html>
