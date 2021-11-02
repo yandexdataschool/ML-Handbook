@@ -1,7 +1,10 @@
 import "../styles/globals.css";
 import type { AppProps /*, AppContext */ } from "next/app";
+import { useProgress } from "@/hooks/useProgress";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useProgress();
+
   return <Component {...pageProps} />;
 }
 
