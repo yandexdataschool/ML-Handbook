@@ -9,23 +9,23 @@ export type Author = {
   photo: string;
 };
 
-const getPhoto = (photo: string): string | null => {
+const getPhoto = (authorNickname: string, photo: string): string | null => {
   if (photo) {
     const photoFileName = photo.slice(2).toLowerCase();
 
-    return `/authors/with-photo/${slugify(photoFileName)}`;
+    return `/authors/${authorNickname}/${slugify(photoFileName)}`;
   }
 
   return null;
 };
 
-export const getAuthor = (nickname: string): Author => {
-  const authorsPath = path.join(process.cwd(), "authors", nickname);
+export const getAuthor = (authorNickname: string): Author => {
+  const authorsPath = path.join(process.cwd(), "authors", authorNickname);
   const authorFilePath = path.join(authorsPath, "index.md");
   const source = fs.readFileSync(authorFilePath);
   const { data } = matter(source);
   const { name, email } = data;
-  const photo = getPhoto(data.photo);
+  const photo = getPhoto(authorNickname, data.photo);
 
   return {
     name,
@@ -33,3 +33,9 @@ export const getAuthor = (nickname: string): Author => {
     photo,
   };
 };
+
+export const getAuthors = (authors: string): Author[] =>
+  authors
+    .split(", ")
+    .filter((authorNickname) => !!authorNickname)
+    .map((authorNickname) => getAuthor(authorNickname));

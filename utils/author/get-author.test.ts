@@ -1,5 +1,5 @@
 import mock from "mock-fs";
-import { getAuthor } from "./get-author";
+import { getAuthor, getAuthors } from "./get-author";
 
 beforeEach(() => {
   mock({
@@ -68,7 +68,28 @@ describe("getAuthor", () => {
     const author = getAuthor("with-photo-russian");
     expect(author.name).toBe("With Photo Russian");
     expect(author.email).toBe("with-photo-russian@email.com");
-    expect(author.photo).toBe("/authors/with-photo/foto-s-probelami-i-na-russkom.jpg");
+    expect(author.photo).toBe("/authors/with-photo-russian/foto-s-probelami-i-na-russkom.jpg");
+  });
+  it("should return correct authors (one)", () => {
+    const authors = getAuthors("without-photo");
+    expect(authors).toContainEqual({
+      name: "Without Photo",
+      email: "without-photo@email.com",
+      photo: null,
+    });
+  });
+  it("should return correct authors (few)", () => {
+    const authors = getAuthors("without-photo, with-empty-photo");
+    expect(authors).toContainEqual({
+      name: "Without Photo",
+      email: "without-photo@email.com",
+      photo: null,
+    });
+    expect(authors).toContainEqual({
+      name: "With Empty Photo",
+      email: "with-empty-photo@email.com",
+      photo: null,
+    });
   });
 });
 afterEach(mock.restore);
