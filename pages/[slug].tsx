@@ -61,7 +61,6 @@ const ARTICLES_FOLDER = "handbook";
 
 export function getStaticPaths(): GetStaticPathsResult {
   const paths = getAllArticleSlugs(ARTICLES_FOLDER);
-  console.log(paths);
 
   return {
     paths,

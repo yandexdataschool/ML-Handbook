@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Layout } from "@/components/Layout/Layout";
 import Link from "next/link";
+import sections from "../handbook/sections.json";
 
 type Chapter = {
   title: string;
@@ -45,7 +46,6 @@ const Section = ({ title, slug, chapters }: Section) => {
 };
 
 const Home = ({ sections }) => {
-  console.log(sections);
   return (
     <Layout>
       <Head>
@@ -66,43 +66,6 @@ const Home = ({ sections }) => {
 };
 
 export const getStaticProps = () => {
-  const sections = [
-    {
-      title: "Введение",
-      slug: "intro",
-      description: "",
-    },
-    {
-      title: "Классическое обучение с учителем",
-      chapters: [
-        {
-          title: "Линейные модели",
-          slug: "linear_models",
-        },
-        {
-          title: "Метрические алгоритмы ",
-          slug: "metric_based",
-        },
-        {
-          title: "Деревья решений",
-          slug: "decision_tree",
-        },
-        {
-          title: "Ансамбли",
-          slug: "ensembles",
-        },
-        {
-          title: "Градиентный бустинг",
-          slug: "grad_boost",
-        },
-      ],
-    },
-    {
-      title: "Оценка качества моделей",
-      slug: "model_evaluation",
-    },
-  ];
-
   return {
     props: {
       sections,
