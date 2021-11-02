@@ -1,22 +1,9 @@
-import path from "path";
-import fs from "fs";
-import matter from "gray-matter";
-
+/* Vendor */
 import { useMemo } from "react";
 
 import { GetStaticPathsResult } from "next";
 import Head from "next/head";
 
-/* Remark plugins */
-import remarkMath from "remark-math";
-import { remarkMdxImages } from "remark-mdx-images";
-
-/* Rehype plugins */
-import rehypeKatex from "rehype-katex";
-import rehypeSlug from "rehype-slug";
-import rehypeToc from "@jsdevtools/rehype-toc";
-
-import { bundleMDX } from "mdx-bundler";
 import { getMDXComponent } from "mdx-bundler/client";
 
 /* Components */
@@ -28,11 +15,10 @@ import { ToC } from "@/components/ToC/ToC";
 import { IFrame } from "@/components/IFrame/IFrame";
 import { Content } from "@/components/Content/Content";
 
-if (process.platform === "win32") {
-  process.env.ESBUILD_BINARY_PATH = path.join(process.cwd(), "node_modules", "esbuild", "esbuild.exe");
-} else {
-  process.env.ESBUILD_BINARY_PATH = path.join(process.cwd(), "node_modules", "esbuild", "bin", "esbuild");
-}
+/* Utils */
+import { getTransformedArticle } from "../utils/article/get-transformed-article";
+import { FrontMatter, getArticleContent } from "../utils/article/get-article-content";
+import { getAllArticleSlugs } from "../utils/article/get-all-article-slugs";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -46,7 +32,13 @@ const components = {
   IFrame,
 };
 
-export default function ArticlePage({ code, frontMatter, tableOfContents }) {
+type Props = {
+  code: string;
+  frontMatter: FrontMatter;
+  tableOfContents: Record<string, any>;
+};
+
+export default function ArticlePage({ code, frontMatter, tableOfContents }: Props) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
 
   return (
@@ -65,68 +57,28 @@ export default function ArticlePage({ code, frontMatter, tableOfContents }) {
   );
 }
 
+const ARTICLES_FOLDER = "handbook";
+
 export function getStaticPaths(): GetStaticPathsResult {
+  const paths = getAllArticleSlugs(ARTICLES_FOLDER);
+  console.log(paths);
+
   return {
-    paths: [
-      {
-        params: {
-          slug: "intro",
-        },
-      },
-    ],
+    paths,
     fallback: false,
   };
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const imagesRelativePath = path.join("images");
-  const publicPath = path.join(process.cwd(), "public", imagesRelativePath);
-  const postPath = path.join(process.cwd(), "handbook", "test");
-  const postFilePath = path.join(postPath, "_test.mdx");
-  const source = fs.readFileSync(postFilePath);
-
-  const { content, data: frontMatter } = matter(source);
-
-  let tableOfContents = null;
-  const { code } = await bundleMDX(content, {
-    cwd: postPath,
-    xdmOptions: (options) => {
-      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkMath, remarkMdxImages];
-      options.rehypePlugins = [
-        ...(options.rehypePlugins ?? []),
-        rehypeSlug,
-        [
-          rehypeToc,
-          {
-            customizeTOC: (originalTableOfContents) => (tableOfContents = originalTableOfContents),
-          },
-        ],
-        rehypeKatex,
-      ];
-
-      return options;
-    },
-    esbuildOptions: (options) => {
-      // Set the `outdir` to a public location for this bundle.
-      options.outdir = publicPath;
-      options.loader = {
-        ...options.loader,
-        // Tell esbuild to use the `file` loader for pngs
-        ".png": "file",
-        ".jpg": "file",
-        ".svg": "file",
-      };
-      // Set the public path
-      options.publicPath = imagesRelativePath;
-
-      // Set write to true so that esbuild will output the files.
-      options.write = true;
-
-      return options;
-    },
-  });
+  const { content, frontMatter, tableOfContents } = getArticleContent(ARTICLES_FOLDER, slug);
+  console.log(slug);
+  const { code } = await getTransformedArticle(slug, content);
 
   return {
-    props: { code, frontMatter, tableOfContents },
+    props: {
+      code,
+      frontMatter,
+      tableOfContents,
+    },
   };
 }

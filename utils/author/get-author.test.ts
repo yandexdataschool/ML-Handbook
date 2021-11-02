@@ -3,12 +3,19 @@ import { getAuthor, getAuthors } from "./get-author";
 
 beforeEach(() => {
   mock({
+    "authors/with-empty-email": mock.directory({
+      items: {
+        "index.md": `---
+name: With Empty Email
+---
+`,
+      },
+    }),
     "authors/with-empty-photo": mock.directory({
       items: {
         "index.md": `---
-name: "With Empty Photo"
-email: "with-empty-photo@email.com"
-photo: ""
+name: With Empty Photo
+email: with-empty-photo@email.com
 ---
 `,
       },
@@ -16,8 +23,8 @@ photo: ""
     "authors/with-photo": mock.directory({
       items: {
         "index.md": `---
-name: "With Photo"
-email: "with-photo@email.com"
+name: With Photo
+email: with-photo@email.com
 photo: "./photo.jpg"
 ---
 `,
@@ -26,9 +33,9 @@ photo: "./photo.jpg"
     "authors/with-photo-russian": mock.directory({
       items: {
         "index.md": `---
-name: "With Photo Russian"
-email: "with-photo-russian@email.com"
-photo: "./Фото с Пробелами и на русском.JPG"
+name: With Photo Russian
+email: with-photo-russian@email.com
+photo: ./Фото с Пробелами и на русском.JPG
 ---
 `,
       },
@@ -36,8 +43,8 @@ photo: "./Фото с Пробелами и на русском.JPG"
     "authors/without-photo": mock.directory({
       items: {
         "index.md": `---
-name: "Without Photo"
-email: "without-photo@email.com"
+name: Without Photo
+email: without-photo@email.com
 ---
 `,
       },
@@ -45,6 +52,12 @@ email: "without-photo@email.com"
   });
 });
 describe("getAuthor", () => {
+  it("should return correct author without email", () => {
+    const author = getAuthor("with-empty-email");
+    expect(author.name).toBe("With Empty Email");
+    expect(author.email).toBeNull();
+    expect(author.photo).toBeNull();
+  });
   it("should return correct author without photo", () => {
     const author = getAuthor("without-photo");
     expect(author.name).toBe("Without Photo");
