@@ -17,6 +17,7 @@ photo: "./photo.jpg"
       "chapter-name": {
         "index.mdx": `---
 title: "Title"
+description: "Description"
 hero_image: "./photo.jpg"
 hero_image_alt: "A grey and white pitbull wading happily in a pool"
 authors: with-photo
@@ -41,6 +42,7 @@ describe("getArticleContent()", () => {
     expect(content).toBe("Some file content\n");
     expect(frontMatter).toEqual({
       title: "Title",
+      description: null,
       heroImage: {
         alt: "A grey and white pitbull wading happily in a pool",
         src: "/handbook/chapter-name/another-article/images/photo.jpg",
@@ -59,6 +61,7 @@ describe("getArticleContent()", () => {
     expect(content).toBe("Some file content\n");
     expect(frontMatter).toEqual({
       title: "Title",
+      description: "Description",
       heroImage: {
         alt: "A grey and white pitbull wading happily in a pool",
         src: "/handbook/chapter-name/images/photo.jpg",

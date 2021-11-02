@@ -1,19 +1,24 @@
 import fs from "fs";
-import matter from "gray-matter";
 import path from "path";
-import { Author, getAuthors } from "../author/get-author";
+
+import matter from "gray-matter";
 import slugify from "slugify";
 
-type Article = {
-  content: string;
-  frontMatter: {
-    title: string;
-    heroImage?: {
-      src: string;
-      alt: string;
-    };
-    authors?: Author[];
+import { Author, getAuthors } from "../author/get-author";
+
+export type FrontMatter = {
+  title: string;
+  description?: string;
+  heroImage?: {
+    src: string;
+    alt: string;
   };
+  authors?: Author[];
+};
+
+export type Article = {
+  content: string;
+  frontMatter: FrontMatter;
   tableOfContents: {};
 };
 
@@ -47,7 +52,7 @@ export const getArticleContent = (articlesFolder: string, slug: string): Article
 
   const { content, data: frontMatter } = matter(source);
 
-  const authors = frontMatter.authors ? getAuthors(frontMatter.authors) : null;
+  const description = frontMatter.description ?? null;
   const heroImage =
     frontMatter.hero_image && frontMatter.hero_image_alt
       ? {
@@ -59,12 +64,14 @@ export const getArticleContent = (articlesFolder: string, slug: string): Article
           alt: frontMatter.hero_image_alt,
         }
       : null;
+  const authors = frontMatter.authors ? getAuthors(frontMatter.authors) : null;
   const tableOfContents = {};
 
   return {
     content,
     frontMatter: {
       title: frontMatter.title,
+      description,
       heroImage,
       authors,
     },
