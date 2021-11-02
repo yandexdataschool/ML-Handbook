@@ -1,11 +1,17 @@
+/* Vendor */
 import Head from "next/head";
+import Link from "next/link";
+
+/* Components */
 import { Layout } from "@/components/Layout/Layout";
 import { Header } from "@/components/Header/Header";
 import { Main } from "@/components/Main/Main";
 import { Footer } from "@/components/Footer/Footer";
 
+/* Table Of Contents*/
+import sections from "../handbook/sections.json";
+
 const Home = ({ sections }) => {
-  console.log(sections);
   return (
     <Layout>
       <Head>
@@ -19,43 +25,6 @@ const Home = ({ sections }) => {
 };
 
 export const getStaticProps = () => {
-  const sections = [
-    {
-      title: "Введение",
-      slug: "intro",
-      description: "",
-    },
-    {
-      title: "Классическое обучение с учителем",
-      chapters: [
-        {
-          title: "Линейные модели",
-          slug: "linear_models",
-        },
-        {
-          title: "Метрические алгоритмы ",
-          slug: "metric_based",
-        },
-        {
-          title: "Деревья решений",
-          slug: "decision_tree",
-        },
-        {
-          title: "Ансамбли",
-          slug: "ensembles",
-        },
-        {
-          title: "Градиентный бустинг",
-          slug: "grad_boost",
-        },
-      ],
-    },
-    {
-      title: "Оценка качества моделей",
-      slug: "model_evaluation",
-    },
-  ];
-
   return {
     props: {
       sections,
