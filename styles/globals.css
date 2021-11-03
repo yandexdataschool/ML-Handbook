@@ -7,3 +7,10 @@
 @tailwind utilities;
 @import "katex/dist/katex.min.css";
 @import url("../fonts/fonts.css");
+
+@layer utilities {
+  summary {
+    color: #111827;
+    font-weight: 600;
+  }
+} ;
