@@ -75,8 +75,10 @@ $$\color{#348FEA}{f_w(x_i) = \langle w, x_i \rangle + w_0}$$
 
 Свободный член $$w_0$$ часто опускают, потому что такого же результата можно добиться, добавив ко всем $$x_i$$ признак, тождественно равный единице; тогда роль свободного члена будет играть соответствующий ему вес:
 
-$$\begin{pmatrix}1 &  x_{i1} & \ldots & x_{iD} \end{pmatrix}\cdot\begin{pmatrix}w_1\\ \vdots \\ w_D\end{pmatrix} + b =
-\begin{pmatrix}1 &  x_{i1} & \ldots & x_{iD} \end{pmatrix}\cdot\begin{pmatrix}w_0 \\ w_1\\ \vdots \\ w_D \end{pmatrix}$$
+$$
+\begin{pmatrix}1 &  x_{i1} & \ldots & x_{iD} \end{pmatrix}\cdot\begin{pmatrix}w_1\\ \vdots \\ w_D\end{pmatrix} + b =
+\begin{pmatrix}1 &  x_{i1} & \ldots & x_{iD} \end{pmatrix}\cdot\begin{pmatrix}w_0 \\ w_1\\ \vdots \\ w_D \end{pmatrix}
+$$
 
 Поскольку это сильно упрощает запись, в дальнейшем мы будем считать, что это уже сделано и зависимость имеет вид просто $$f_w(x_i) = \langle w, x_i \rangle$$.
 
@@ -451,10 +453,13 @@ $$MAPE(y, \widehat{y}) = \frac{1}{n}\sum_{i=1}^n \left|\frac{\widehat{y}_i-y_i}{
 
 **Вопрос на подумать**.  Кроме описанных выше в задаче линейной регрессии можно использовать и другие функции потерь, например, **Huber loss**:
 
-$$\mathcal{L}(f, X, y) = \sum_{i=1}^Nh_{\delta}(y_i - \langle w_i, x\rangle),\mbox{ где }h_{\delta}(z) = \begin{cases}
+$$
+\mathcal{L}(f, X, y) = \sum_{i=1}^Nh_{\delta}(y_i - \langle w_i, x\rangle),\mbox{ где }h_{\delta}(z) =
+\begin{cases}
 \frac12z^2,\ |z|\leqslant\delta,\\
 \delta(|z| - \frac12\delta),\ |z| > \delta
-\end{cases}$$
+\end{cases}
+$$
 
 Число $$\delta$$ является гиперпараметром. Сложная формула при $$\vert z\vert > \delta$$ нужна, чтобы функция $$h_{\delta}(z)$$ была непрерывной (и даже гладкой). Попробуйте объяснить, зачем может быть нужна такая функция потерь.
 
@@ -819,18 +824,24 @@ $$b_k(x) = \langle w_k, x \rangle + w_{0k},$$
 
 каждая из которых даёт оценку принадлежности объекта одному из классов. Как преобразовать вектор оценок $(b_1(x), \ldots, b_K(x))$ в вероятности? Для этого можно воспользоваться оператором $\text{softmax}(z_1, \ldots, z_K)$, который производит «нормировку» вектора:
 
-$$\text{softmax}(z_1, \ldots, z_K) = \left(\frac{\exp(z_1)}{\sum_{k = 1}^{K} \exp(z_k)},
-\dots, \frac{\exp(z_K)}{\sum_{k = 1}^{K} \exp(z_k)}\right).$$
+$$
+\text{softmax}(z_1, \ldots, z_K) = \left(\frac{\exp(z_1)}{\sum_{k = 1}^{K} \exp(z_k)},
+\dots, \frac{\exp(z_K)}{\sum_{k = 1}^{K} \exp(z_k)}\right).
+$$
 
 В этом случае вероятность $k$-го класса будет выражаться как
 
-$$P(y = k \vert x, w) = \frac{
-\exp{(\langle w_k, x \rangle + w_{0k})}}{ \sum_{j = 1}^{K} \exp{(\langle w_j, x \rangle + w_{0j})}}.$$
+$$
+P(y = k \vert x, w) = \frac{
+\exp{(\langle w_k, x \rangle + w_{0k})}}{ \sum_{j = 1}^{K} \exp{(\langle w_j, x \rangle + w_{0j})}}.
+$$
 
 Обучать эти веса предлагается с помощью метода максимального правдоподобия: так же,
 как и в случае с двухклассовой логистической регрессией:
 
-$$\sum_{i = 1}^{\ell} \log P(y = y_i \vert x_i, w) \to \max_{w_1, \dots, w_K}$$
+$$
+\sum_{i = 1}^{\ell} \log P(y = y_i \vert x_i, w) \to \max_{w_1, \dots, w_K}
+$$
 
 &nbsp;
 # Масштабируемость линейных моделей
