@@ -824,18 +824,24 @@ $$b_k(x) = \langle w_k, x \rangle + w_{0k},$$
 
 каждая из которых даёт оценку принадлежности объекта одному из классов. Как преобразовать вектор оценок $(b_1(x), \ldots, b_K(x))$ в вероятности? Для этого можно воспользоваться оператором $\text{softmax}(z_1, \ldots, z_K)$, который производит «нормировку» вектора:
 
-$$\text{softmax}(z_1, \ldots, z_K) = \left(\frac{\exp(z_1)}{\sum_{k = 1}^{K} \exp(z_k)},
-\dots, \frac{\exp(z_K)}{\sum_{k = 1}^{K} \exp(z_k)}\right).$$
+$$
+\text{softmax}(z_1, \ldots, z_K) = \left(\frac{\exp(z_1)}{\sum_{k = 1}^{K} \exp(z_k)},
+\dots, \frac{\exp(z_K)}{\sum_{k = 1}^{K} \exp(z_k)}\right).
+$$
 
 В этом случае вероятность $k$-го класса будет выражаться как
 
-$$P(y = k \vert x, w) = \frac{
-\exp{(\langle w_k, x \rangle + w_{0k})}}{ \sum_{j = 1}^{K} \exp{(\langle w_j, x \rangle + w_{0j})}}.$$
+$$
+P(y = k \vert x, w) = \frac{
+\exp{(\langle w_k, x \rangle + w_{0k})}}{ \sum_{j = 1}^{K} \exp{(\langle w_j, x \rangle + w_{0j})}}.
+$$
 
 Обучать эти веса предлагается с помощью метода максимального правдоподобия: так же,
 как и в случае с двухклассовой логистической регрессией:
 
-$$\sum_{i = 1}^{\ell} \log P(y = y_i \vert x_i, w) \to \max_{w_1, \dots, w_K}$$
+$$
+\sum_{i = 1}^{\ell} \log P(y = y_i \vert x_i, w) \to \max_{w_1, \dots, w_K}
+$$
 
 &nbsp;
 # Масштабируемость линейных моделей
