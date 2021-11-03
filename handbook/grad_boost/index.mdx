@@ -271,8 +271,10 @@ $$ \Omega(b) = \gamma T + \frac{1}{2}\lambda\sum_{j=1}^{T}w_j^2,$$
 
 Разложим функционал потерь $Obj$ в ряд Тейлора в точке $t_0 = \left(a_{k-1}(x_1),\ldots,a_{k-1}(x_N)\right)$ (текущем предсказании композии). Распишем этот ряд до второго члена. Для $i$-го объекта получаем:
 
-$$ Obj(y, t) \approx Obj + \left[\nabla_{z=t_0}Obj\right]^T
-(t-t_0) + \frac{1}{2}(t-t_0)^T\left[\nabla^2_{z=t_0}Obj\right](t-t_0)$$
+$$
+Obj(y, t) \approx Obj + \left[\nabla_{z=t_0}Obj\right]^T
+(t-t_0) + \frac{1}{2}(t-t_0)^T\left[\nabla^2_{z=t_0}Obj\right](t-t_0)
+$$
 
 Таким образом, мы переходим от произвольного функционала потерь к квадратичной аппроксимации с хорошими математическими свойствами. Теперь попробуем аналитически вывести минимум для этого функционала по $b(x)$.
 
@@ -301,8 +303,10 @@ $$ Obj \approx \sum_{i=1}^N \left[g_i b(x_i) + \frac{1}{2} h_i b^2(x_i)\right] +
 
 Заметим, что каждое из значений $b(x_i)$ попадает в один из $T$ листьев дерева. Сгруппируем слагаемые по объектам, попавшим в один лист:
 
-$$ Obj \approx \sum\limits_{j=1}^{T}\left[\sum\limits_{i \in I_j} g_i w_j + \frac{1}{2}\sum\limits_{i \in I_j} (h_i + \lambda)w_j^2 \right] + \gamma T
- = \sum\limits_{j=1}^{T}\left[G_jw_j + \frac{1}{2}(H_j + \lambda)w_j^2 \right] + \gamma T, $$
+$$
+Obj \approx \sum\limits_{j=1}^{T}\left[\sum\limits_{i \in I_j} g_i w_j + \frac{1}{2}\sum\limits_{i \in I_j} (h_i + \lambda)w_j^2 \right] + \gamma T
+= \sum\limits_{j=1}^{T}\left[G_jw_j + \frac{1}{2}(H_j + \lambda)w_j^2 \right] + \gamma T,
+$$
 
 где
  - $I_j$ - множество объектов обучающей выборки, попавших в $j$-ый лист дерева;
