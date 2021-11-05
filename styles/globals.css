@@ -10,6 +10,10 @@
 @import url("../fonts/fonts.css");
 
 @layer utilities {
+  summary {
+    color: #111827;
+    font-weight: 600;
+
   details > p {
     border-left: 1px solid #3b4856;
     margin-left: 5px;
