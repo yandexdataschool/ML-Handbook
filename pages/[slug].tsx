@@ -14,6 +14,9 @@ import { Example } from "@/components/Example/Example";
 import { ToC } from "@/components/ToC/ToC";
 import { IFrame } from "@/components/IFrame/IFrame";
 import { Content } from "@/components/Content/Content";
+import { HeaderArticle } from "@/components/HeaderArticle/HeaderArticle";
+import { Footer } from "@/components/Footer/Footer";
+
 
 /* Utils */
 import { getTransformedArticle } from "../utils/article/get-transformed-article";
@@ -47,12 +50,14 @@ export default function ArticlePage({ code, frontMatter, tableOfContents }: Prop
         <title>{frontMatter.title}</title>
         <meta name="description" content={frontMatter.description} />
       </Head>
+      <HeaderArticle />
       <main className="container mx-auto max-w-5xl">
         <Content>
           {/*@ts-ignore*/}
           <Component components={components} />
         </Content>
       </main>
+      <Footer />
     </Layout>
   );
 }
