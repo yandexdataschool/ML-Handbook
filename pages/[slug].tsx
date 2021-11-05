@@ -16,6 +16,7 @@ import { IFrame } from "@/components/IFrame/IFrame";
 import { Content } from "@/components/Content/Content";
 import { HeaderArticle } from "@/components/HeaderArticle/HeaderArticle";
 import { Footer } from "@/components/Footer/Footer";
+import { Sidebar } from "@/components/Sidebar/Sidebar";
 
 
 /* Utils */
@@ -51,11 +52,14 @@ export default function ArticlePage({ code, frontMatter, tableOfContents }: Prop
         <meta name="description" content={frontMatter.description} />
       </Head>
       <HeaderArticle />
-      <main className="container mx-auto max-w-5xl">
-        <Content>
-          {/*@ts-ignore*/}
-          <Component components={components} />
-        </Content>
+      <main className="container mx-auto flex">
+      
+          <Sidebar />
+          <Content>
+            {/*@ts-ignore*/}
+            <Component components={components} />
+          </Content>
+       
       </main>
       <Footer />
     </Layout>
