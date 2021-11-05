@@ -19,7 +19,6 @@ const Sidebar = styled.div`
   width: 100%;
   max-width: 300px;
   height: calc(100vh - 100px);
-  background: #fff;
   z-index: 1;
 `;
 
