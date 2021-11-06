@@ -1,10 +1,10 @@
 var HEIGHT = 600;
 var WIDTH = 800;
 function main() {
-  var canvas = document.getElementById('canvas');
+  var canvas = document.getElementById("canvas");
   canvas.width = WIDTH;
   canvas.height = HEIGHT;
-  $(canvas).on('click', (e) => {
+  $(canvas).on("click", (e) => {
     add_point(e);
   });
   function add_point(e) {
@@ -39,10 +39,9 @@ function main() {
     p.push(c);
     state.dummies.push(p);
     redraw();
-
   }
 
-  var ctx = canvas.getContext('2d');
+  var ctx = canvas.getContext("2d");
   ctx.height = HEIGHT;
   ctx.width = WIDTH;
 
@@ -58,64 +57,62 @@ function main() {
     metric: l2_distance,
     dataset: generate_cluster_points_circles,
     k: 1,
-    colors: [
-      'red', 'blue', 'green', 'purple', 'orange',
-    ],
+    colors: ["red", "blue", "green", "purple", "orange"],
     small_step: 3,
     big_step: 10,
     dummies: [],
-    dum_neigh:1
+    dum_neigh: 1,
   };
 
   function gen_points() {
     state.points = state.dataset(ctx, state.num_classes, state.num_points, state.cluster_std);
 
     let cls = [0, 0, 0, 0];
-    state.points.forEach(item => {
+    state.points.forEach((item) => {
       $(`.cls-num-${item[2]} span`).text((i, _str) => {
         cls[item[2]] += 1;
         return cls[item[2]];
-      })
+      });
     });
   }
   gen_points();
 
   function redraw(speed) {
     var step = state.small_step;
-    if (speed === 'fast') step = state.big_step;
+    if (speed === "fast") step = state.big_step;
     ctx.clearRect(0, 0, ctx.width, ctx.height);
     draw_boundaries(ctx, state, step);
     draw_points(ctx, state.points, state.colors);
-    if(dragging_point == null)
+    if (dragging_point == null)
       draw_dummies(ctx, state.dummies.slice(-1), state.colors, state.k, state.metric, state.dum_neigh);
   }
   redraw();
 
   // Handlers for metric buttons
-  $('#l2-btn').click(function () {
+  $("#l2-btn").click(function () {
     // state.metric = l2_distance;
     state.metric = l2_distance;
     state.dummies = [];
     redraw();
   });
-  $('#l1-btn').click(function () {
+  $("#l1-btn").click(function () {
     state.metric = l1_distance;
     state.dummies = [];
     redraw();
   });
 
   // Handlers for dataset buttons
-  $('#circles-btn').click(function () {
+  $("#circles-btn").click(function () {
     state.dataset = generate_cluster_points_circles;
     gen_points();
     redraw();
   });
-  $('#moonshapes-btn').click(function () {
+  $("#moonshapes-btn").click(function () {
     state.dataset = generate_cluster_points_moonshapes;
     gen_points();
     redraw();
   });
-  $('#random-btn').click(function () {
+  $("#random-btn").click(function () {
     state.dataset = generate_cluster_points_random;
     gen_points();
     redraw();
@@ -125,7 +122,7 @@ function main() {
   for (var k = 1; k <= 7; k++) {
     (function () {
       var kk = k;
-      $('#k-' + k + '-btn').click(function () {
+      $("#k-" + k + "-btn").click(function () {
         state.k = kk;
         redraw();
       });
@@ -136,7 +133,7 @@ function main() {
   for (var c = 2; c <= 5; c++) {
     (function () {
       var cc = c;
-      $('#num-cls-' + c + '-btn').click(function () {
+      $("#num-cls-" + c + "-btn").click(function () {
         state.num_classes = cc;
         state.dummies = [];
         gen_points();
@@ -149,10 +146,10 @@ function main() {
   for (var i = 0; i < num_points_choices.length; i++) {
     (function () {
       var num_points = num_points_choices[i];
-      var s = '#num-pts-' + num_points + '-btn';
+      var s = "#num-pts-" + num_points + "-btn";
       console.log(s);
-      $('#num-pts-' + num_points + '-btn').click(function () {
-        console.log('here');
+      $("#num-pts-" + num_points + "-btn").click(function () {
+        console.log("here");
         state.num_points = num_points;
         gen_points();
         state.dummies = [];
@@ -168,8 +165,8 @@ function main() {
     var idx = null;
     var min_dist = 100000;
     for (var i = 0; i < state.num_points; i++) {
-      var dx = (p[0] - state.points[i][0]);
-      var dy = (p[1] - state.points[i][1]);
+      var dx = p[0] - state.points[i][0];
+      var dy = p[1] - state.points[i][1];
       var d = Math.sqrt(dx * dx + dy * dy);
       if (d < thresh && d < min_dist) {
         min_dist = d;
@@ -184,17 +181,15 @@ function main() {
     var p = get_click_coords(canvas, e);
     state.points[dragging_point][0] = p[0];
     state.points[dragging_point][1] = p[1];
-    redraw('fast');
+    redraw("fast");
   });
   $(canvas).mouseup(function () {
     //console.log(dragging_point);
     if (dragging_point === null) return;
     dragging_point = null;
     redraw();
-  })
-
+  });
 }
-
 
 function get_click_coords(obj, e) {
   var offset = $(obj).offset();
@@ -202,8 +197,6 @@ function get_click_coords(obj, e) {
   var cy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop - Math.floor(offset.top) + 1;
   return [cx, cy];
 }
-
-
 
 function randn() {
   // Using Box-Muller transform
@@ -213,7 +206,6 @@ function randn() {
   var t = Math.cos(2 * Math.PI * v);
   return r * t;
 }
-
 
 function generate_uniform_points(ctx, num_classes, num_points) {
   // Returns a list of [x, y, class]
@@ -242,7 +234,7 @@ function generate_cluster_points_moonshapes(ctx, num_classes, num_points, std) {
   for (let i = 0; i < num_points; i++) {
     let c = Math.floor(num_classes * Math.random());
     let nboo = c % 2 == 0 ? -1 : 1;
-    let pi = (nboo * Math.random() * Math.PI);
+    let pi = nboo * Math.random() * Math.PI;
     let x = Math.cos(pi) * 100 + centers[c][0];
     let y = Math.sin(pi) * 100 + centers[c][1];
     points.push([x, y, c]);
@@ -251,7 +243,7 @@ function generate_cluster_points_moonshapes(ctx, num_classes, num_points, std) {
   return points;
 }
 
-function generate_cluster_points_circles(ctx, num_classes, num_points, std) {  
+function generate_cluster_points_circles(ctx, num_classes, num_points, std) {
   var centers = [];
   for (let i = 0; i < num_classes; i++) {
     let x = WIDTH / 2;
@@ -262,9 +254,9 @@ function generate_cluster_points_circles(ctx, num_classes, num_points, std) {
   let points = [];
   for (let i = 0; i < num_points; i++) {
     let c = Math.floor(num_classes * Math.random());
-    let pi = (2 * Math.random() * Math.PI);
-    let x = Math.cos(pi) * (c + .5) * 70 + centers[c][0];
-    let y = Math.sin(pi) * (c + .5) * 70 + centers[c][1];
+    let pi = 2 * Math.random() * Math.PI;
+    let x = Math.cos(pi) * (c + 0.5) * 70 + centers[c][0];
+    let y = Math.sin(pi) * (c + 0.5) * 70 + centers[c][1];
     points.push([x, y, c]);
   }
 
@@ -297,8 +289,8 @@ function draw_points(ctx, points, colors) {
     var y = points[i][1];
     var c = points[i][2];
     ctx.beginPath();
-    ctx.globalAlpha = 1.0; 
-    ctx.fillStyle = c!==null ? colors[c]:'black';
+    ctx.globalAlpha = 1.0;
+    ctx.fillStyle = c !== null ? colors[c] : "black";
     ctx.arc(x, y, 5, 0, 2 * Math.PI);
     ctx.fill();
 
@@ -308,26 +300,22 @@ function draw_points(ctx, points, colors) {
 }
 function draw_dummies(ctx, points, colors, k, metric, neighbors) {
   draw_points(ctx, points, colors);
-  if(points.length == 0 || neighbors==null)
-  return;
-  makeBound(ctx, points[points.length - 1], points,k, metric, neighbors);
+  if (points.length == 0 || neighbors == null) return;
+  makeBound(ctx, points[points.length - 1], points, k, metric, neighbors);
 }
 function makeBound(ctx, p, points, k, metric, neighbors) {
   // ctx.lineWidth = 1;
   // ctx.strokeStyle = '#003300';
   // ctx.stroke();
-  let npop = neighbors[neighbors.length-1];
+  let npop = neighbors[neighbors.length - 1];
   let radius = metric(npop, p);
   console.log(neighbors);
   if (metric == l2_distance) {
     ctx.beginPath();
     ctx.arc(p[0], p[1], radius, 0, 2 * Math.PI);
-    console.log(p)
-  }
-  else if (metric == l1_distance)
-    ctx.diamond(p[0], p[1], radius, radius);
+    console.log(p);
+  } else if (metric == l1_distance) ctx.diamond(p[0], p[1], radius, radius);
   ctx.stroke();
-
 }
 
 function l2_distance(p1, p2) {
@@ -336,7 +324,6 @@ function l2_distance(p1, p2) {
 
   return Math.sqrt(dx * dx + dy * dy);
 }
-
 
 function l1_distance(p1, p2) {
   var dx = p1[0] - p2[0];
@@ -349,21 +336,21 @@ function l_inf(p1, p2) {
   return Math.abs(dx) + Math.abs(dy);
 }
 
-
 function find_neighbors(p, points, k, metric) {
   var dists = [];
   for (var i = 0; i < points.length; i++) {
     var dist = metric(p, points[i]);
     dists.push([dist, points[i]]);
   }
-  dists.sort(function (a, b) { return a[0] - b[0] });
+  dists.sort(function (a, b) {
+    return a[0] - b[0];
+  });
   var neighbors = [];
   for (var i = 0; i < k && i < dists.length; i++) {
     neighbors.push(dists[i][1]);
   }
   return neighbors;
 }
-
 
 function majority_vote(points, num_classes) {
   // Assume points is a list of the form [x, y, c]
@@ -387,7 +374,6 @@ function majority_vote(points, num_classes) {
   return winner;
 }
 
-
 function draw_boundaries(ctx, state, step) {
   var eps = 0;
   for (var x = step / 2; x < ctx.width; x += step) {
@@ -398,15 +384,10 @@ function draw_boundaries(ctx, state, step) {
       if (c !== null) {
         ctx.globalAlpha = 0.4;
         ctx.fillStyle = state.colors[c];
-        ctx.fillRect(
-          x - step / 2 - eps,
-          y - step / 2 - eps,
-          step + 2 * eps,
-          step + 2 * eps);
+        ctx.fillRect(x - step / 2 - eps, y - step / 2 - eps, step + 2 * eps, step + 2 * eps);
       }
     }
   }
 }
-
 
 $(main);
