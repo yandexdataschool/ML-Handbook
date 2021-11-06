@@ -69,7 +69,5 @@ export const getTransformedArticle = async (slug: string, content: string): Prom
     },
   });
 
-  console.log("errors: ", errors.shift());
-
   return { code, tableOfContents };
 };

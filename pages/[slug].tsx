@@ -17,7 +17,6 @@ import { Content } from "@/components/Content/Content";
 import { HeaderArticle } from "@/components/HeaderArticle/HeaderArticle";
 import { Footer } from "@/components/Footer/Footer";
 
-
 /* Utils */
 import { getTransformedArticle } from "../utils/article/get-transformed-article";
 import { FrontMatter, getArticleContent } from "../utils/article/get-article-content";
@@ -75,7 +74,6 @@ export function getStaticPaths(): GetStaticPathsResult {
 
 export async function getStaticProps({ params: { slug } }) {
   const { content, frontMatter, tableOfContents } = getArticleContent(ARTICLES_FOLDER, slug);
-  console.log(slug);
   const { code } = await getTransformedArticle(slug, content);
 
   return {
