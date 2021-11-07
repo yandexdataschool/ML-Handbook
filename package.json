@@ -30,6 +30,7 @@
     "rehype-autolink-headings": "^6.1.0",
     "rehype-katex": "^6.0.1",
     "rehype-slug": "^5.0.0",
+    "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.0",
     "remark-mdx-images": "^1.0.3",
     "slugify": "^1.6.1",
