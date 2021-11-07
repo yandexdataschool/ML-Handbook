@@ -19,6 +19,7 @@ const Sidebar = styled.div`
   max-width: 300px;
   height: calc(100vh - 100px);
   z-index: 1;
+  position: sticky;
 `;
 
 const SidebarCloseBtn = styled.button`
