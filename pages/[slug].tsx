@@ -18,7 +18,6 @@ import { HeaderArticle } from "@/components/HeaderArticle/HeaderArticle";
 import { Footer } from "@/components/Footer/Footer";
 import { Sidebar } from "@/components/Sidebar/Sidebar";
 
-
 /* Utils */
 import { getTransformedArticle } from "../utils/article/get-transformed-article";
 import { FrontMatter, getArticleContent } from "../utils/article/get-article-content";
@@ -53,13 +52,11 @@ export default function ArticlePage({ code, frontMatter, tableOfContents }: Prop
       </Head>
       <HeaderArticle />
       <main className="container mx-auto flex">
-      
           <Sidebar />
           <Content>
             {/*@ts-ignore*/}
             <Component components={components} />
-          </Content>
-       
+          </Content>       
       </main>
       <Footer />
     </Layout>

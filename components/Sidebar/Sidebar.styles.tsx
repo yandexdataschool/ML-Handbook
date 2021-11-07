@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 
 import closeBtn from './images/sidebar-close.svg';
