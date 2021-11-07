@@ -52,11 +52,11 @@ export default function ArticlePage({ code, frontMatter, tableOfContents }: Prop
       </Head>
       <HeaderArticle />
       <main className="container mx-auto flex">
-          <Sidebar />
-          <Content>
-            {/*@ts-ignore*/}
-            <Component components={components} />
-          </Content>       
+        <Sidebar />
+        <Content>
+          {/*@ts-ignore*/}
+          <Component components={components} />
+        </Content>
       </main>
       <Footer />
     </Layout>
