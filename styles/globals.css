@@ -15,7 +15,8 @@
     font-weight: 600;
   }
 
-  details > p {
+  details > p,
+  details > div {
     border-left: 1px solid #3b4856;
     margin-left: 5px;
     padding-left: 30px;

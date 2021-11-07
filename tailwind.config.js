@@ -13,11 +13,19 @@ module.exports = {
             h1: {
               fontFamily: ["'Yandex Serif', serif"],
             },
-            p: {
-              marginTop: 0,
-              marginBottom: 0,
-              paddingTop: "1.25em",
-              paddingBottom: "1.25em",
+            details: {
+              p: {
+                marginTop: 0,
+                marginBottom: 0,
+                paddingTop: "1.25em",
+                paddingBottom: "1.25em",
+              },
+              div: {
+                marginTop: 0,
+                marginBottom: 0,
+                paddingTop: "1.25em",
+                paddingBottom: "1.25em",
+              },
             },
           },
         },
