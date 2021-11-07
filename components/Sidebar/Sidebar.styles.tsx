@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import closeBtn from './images/sidebar-close.svg';
+import closeBtn from "./images/sidebar-close.svg";
 
 type Props = {
   current?: boolean;
@@ -8,19 +8,17 @@ type Props = {
 
 const Sidebar = styled.div`
   /* position: fixed; */
-  top: 100px;
+  top: 0;
   left: 0;
   display: flex;
-  overflow: scroll;
+  overflow-y: scroll;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 24px 40px 0 20px;
+  padding: 24px 40px 24px 20px;
   width: 100%;
-  max-width: 300px;
-  height: calc(100vh - 100px);
+  height: 100vh;
   z-index: 1;
   position: sticky;
-  margin-bottom: 50px;
 `;
 
 const SidebarCloseBtn = styled.button`
@@ -34,6 +32,7 @@ const SidebarCloseBtn = styled.button`
   background: center/cover no-repeat url(${closeBtn});
   cursor: pointer;
   transition: opacity 0.2s ease-in;
+
   &:hover {
     opacity: 0.6;
   }
@@ -45,10 +44,11 @@ const SidebarHeading = styled.h3`
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
-  font-family: 'YandexSerif', Georgia, 'Times New Roman', Times, serif;
+  font-family: "YandexSerif", Georgia, "Times New Roman", Times, serif;
   line-height: 20px;
   cursor: pointer;
   transition: opacity 0.2s ease-in;
+
   &:hover {
     opacity: 0.6;
   }
@@ -69,13 +69,15 @@ const SidebarListItem = styled.li`
   color: #3b4856;
   font-weight: 300;
   font-size: 15px;
-  font-family: 'YandexSans', Arial, Helvetica, sans-serif;
+  font-family: "YandexSans", Arial, Helvetica, sans-serif;
   line-height: 18px;
   cursor: pointer;
   transition: opacity 0.2s ease-in;
+
   &:hover {
     opacity: 0.6;
   }
+
   ${({ current }: Props) =>
     current &&
     `
@@ -104,13 +106,15 @@ const SideBarSublistItem = styled.li`
   color: #3b4856;
   font-weight: 300;
   font-size: 15px;
-  font-family: 'YandexSans', Arial, Helvetica, sans-serif;
+  font-family: "YandexSans", Arial, Helvetica, sans-serif;
   line-height: 18px;
   cursor: pointer;
   transition: opacity 0.2s ease-in;
+
   &:hover {
     opacity: 0.6;
   }
+
   ${({ current }: Props) =>
     current &&
     `
