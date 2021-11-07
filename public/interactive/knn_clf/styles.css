@@ -193,43 +193,55 @@ fieldset[disabled] .btn-default.focus {
 */
 
 /* Custom classes */
-.panel{
-    width: 800px;
-    margin: 0 15%;
+.panel {
+  width: 800px;
+  margin: 0 15%;
 }
-.btns-num-points{
-    width: 100%;
+.btns-num-points {
+  width: 100%;
 }
-.btns-num-points .btn{
-    width: 20%;
-    margin: 0 !important;
+.btns-num-points .btn {
+  width: 20%;
+  margin: 0 !important;
 }
 
-.cls-num-points{
-    background-color: #428bca;
-    width: 100%;
-    height: 10%;
-    border-radius: 5px;
-    margin: 10px 0 0 0;
+.cls-num-points {
+  background-color: #428bca;
+  width: 100%;
+  height: 10%;
+  border-radius: 5px;
+  margin: 10px 0 0 0;
 }
-.cls-ul{
-    /*list-style-type: none; */
+.cls-ul {
+  /*list-style-type: none; */
 }
-.cls-li{
-    display: inline-block;
-    /*margin-right: 20px;*/
+.cls-li {
+  display: inline-block;
+  /*margin-right: 20px;*/
 
-    font-size: 18px;
-    font-weight: 400;
+  font-size: 18px;
+  font-weight: 400;
 }
-.cls-color{
-    width: 13px;
-    height: 13px;
-    display: inline-block;
-    border-radius: 5px;
-    margin-right: 5px;
+.cls-color {
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  border-radius: 5px;
+  margin-right: 5px;
 }
-.cls-0{ background-color: red;    box-shadow: 0 0 2px 1px white; }
-.cls-1{ background-color: blue;   box-shadow: 0 0 2px 1px white; }
-.cls-2{ background-color: green;  box-shadow: 0 0 2px 1px white; }
-.cls-3{ background-color: purple; box-shadow: 0 0 2px 1px white; }
+.cls-0 {
+  background-color: red;
+  box-shadow: 0 0 2px 1px white;
+}
+.cls-1 {
+  background-color: blue;
+  box-shadow: 0 0 2px 1px white;
+}
+.cls-2 {
+  background-color: green;
+  box-shadow: 0 0 2px 1px white;
+}
+.cls-3 {
+  background-color: purple;
+  box-shadow: 0 0 2px 1px white;
+}

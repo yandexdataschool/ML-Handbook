@@ -76,7 +76,6 @@ export function getStaticPaths(): GetStaticPathsResult {
 
 export async function getStaticProps({ params: { slug } }) {
   const { content, frontMatter, tableOfContents } = getArticleContent(ARTICLES_FOLDER, slug);
-  console.log(slug);
   const { code } = await getTransformedArticle(slug, content);
 
   return {

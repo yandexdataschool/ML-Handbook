@@ -3,10 +3,6 @@ title: Ансамбли в машинном обучении
 authors: evgenia_elistarova, pavel_gubko
 ---
 
-$\newcommand{\Var}{\operatorname{\mathbb{V}\text{ar}}}$
-$\newcommand{\Exp}{\operatorname{\mathbb{E}}}$
-$\newcommand{\eps}{\varepsilon}$
-
 Представим, что у вас есть несколько моделей, обученных на ваших данных. Можно ли придумать процедуру, которая позволит использовать все имеющиеся модели и при этом получить на тестовых данных качество выше, чем могла показать каждая из этих моделей в отдельности?
 
 # Смещение и разброс
@@ -14,41 +10,41 @@ $\newcommand{\eps}{\varepsilon}$
 Предположим, что мы решаем задачу регрессии с квадратичной функцией потерь. При использовании квадратичной функции потерь для оценки качества работы алгоритма $a$ можно использовать следующий функционал:
 
 $$
-    Q(a) = \Exp_x \Exp_{X, \eps} [y(x, \eps) - a(x, X)]^2,
+    Q(a) = \mathbb{E}_x \mathbb{E}_{X, \mathbb{V}\text{ar}epsilon} [y(x, \mathbb{V}\text{ar}epsilon) - a(x, X)]^2,
 $$
 
 где
 
 - $X$ -- обучающая выборка
 - $x$ -- точка из тестового множества
-- $y = f(x) + \eps$ -- целевая зависимость, которую мы можем измерить с точностью до случайного шума $\eps$
+- $y = f(x) + \mathbb{V}\text{ar}epsilon$ -- целевая зависимость, которую мы можем измерить с точностью до случайного шума $\mathbb{V}\text{ar}epsilon$
 - $a(x, X)$ -- значение алгоритма, обученного на выборке $X$, в точке $x$
-- $\Exp_x$ -- среднее по всем тестовым точкам и $\Exp_{X, \eps}$ -- среднее по всем обучающим выборкам $X$ и случайному шуму $\eps$
+- $\mathbb{E}_x$ -- среднее по всем тестовым точкам и $\mathbb{E}_{X, \mathbb{V}\text{ar}epsilon}$ -- среднее по всем обучающим выборкам $X$ и случайному шуму $\mathbb{V}\text{ar}epsilon$
 
 Для $Q(a)$ существует разложение на три компоненты -- шум, смещение и разброс. Это разложение называется bias-variance decomposition, и оно является одним из мощных средств для анализа работы ансамблей. О, том как его вывести, вы узнаете в соответствующей [главе](../ml_theory/bias_variance_decomposition), а здесь мы приведём его формулировку.
 
 <u> Bias-variance decomposition </u>. Существует представление $Q(a)$ в виде трёх компонент:
 
 $$
-    Q(a) = \Exp_x \text{bias}_X^2 a(x, X) + \Exp_x \Var_X[a(x, X)] + \sigma^2,
+    Q(a) = \mathbb{E}_x \text{bias}_X^2 a(x, X) + \mathbb{E}_x \mathbb{V}\text{ar}_X[a(x, X)] + \sigma^2,
 $$
 
 где
 
 $$
-    \text{bias}_X a(x, X) = f(x) - \Exp_X[a(x, X)]
+    \text{bias}_X a(x, X) = f(x) - \mathbb{E}_X[a(x, X)]
 $$
 
 -- **смещение** предсказания алгоритма в точке $x$, усреднённого по всем возможным обучающим выборкам, относительно истинной зависимости $f$,
 
 $$
-    \Var_X[a(x, X)] = \Exp_X \left[ a(x, X) - \Exp_X[a(x, X)] \right]^2
+    \mathbb{V}\text{ar}_X[a(x, X)] = \mathbb{E}_X \left[ a(x, X) - \mathbb{E}_X[a(x, X)] \right]^2
 $$
 
 -- **дисперсия (разброс)** предсказаний алгоритма в зависимости от обучающей выборки $X$,
 
 $$
-    \sigma^2 = \Exp_x \Exp_\eps[y(x, \eps) - f(x)]^2
+    \sigma^2 = \mathbb{E}_x \mathbb{E}_\mathbb{V}\text{ar}epsilon[y(x, \mathbb{V}\text{ar}epsilon) - f(x)]^2
 $$
 
 -- неустранимый **шум** в данных.
@@ -68,30 +64,34 @@ $$a(x) = \frac{1}{k}(b_1(x) + \dots + b_k(x)).$$
 Посмотрим, что происходит с качеством предсказания при переходе от одной модели к ансамблю. Сначала убедимся, что смещение ансамбля не изменилось по сравнению со средним смещением отдельных моделей. Будем считать, что когда мы берём матожидание по всем обучающим выборкам $X$, то в эти выборки включены также все подвыборки, полученные бутстрепом.
 
 $$
-    \text{bias}_X a(x, X) = f(x) - \Exp_X[a(x, X)] = f(x) - \Exp_X \left[ \frac{1}{k} \sum_{i = 1}^k b(x, X^i) \right] =
+    \text{bias}_X a(x, X) = f(x) - \mathbb{E}_X[a(x, X)] = f(x) - \mathbb{E}_X \left[ \frac{1}{k} \sum_{i = 1}^k b(x, X^i) \right] =
 $$
 
 $$
-    = f(x) - \frac{1}{k} \sum_{i = 1}^k \Exp_X \left[ b(x, X^i) \right] = f(x) - \frac{1}{k} \sum_{i = 1}^k \Exp_X \left[ b(x, X) \right] = f(x) - \Exp_X b(x, X)
+    = f(x) - \frac{1}{k} \sum_{i = 1}^k \mathbb{E}_X \left[ b(x, X^i) \right] = f(x) - \frac{1}{k} \sum_{i = 1}^k \mathbb{E}_X \left[ b(x, X) \right] = f(x) - \mathbb{E}_X b(x, X)
 $$
 
 Получили, что смещение композиции равно смещению одного алгоритма. Теперь посмотрим, что происходит с разбросом.
 
 $$
-    \Var_X[a(x, X)] = \Exp_X \left[ a(x, X) - \Exp_X[a(x, X)] \right]^2 = \\
-    = \Exp_X \left[ \frac{1}{k} \sum_{i = 1}^k b(x, X^i)- \Exp_X \left[ \frac{1}{k} \sum_{i = 1}^k b(x, X^i) \right] \right]^2 = \\
-    = \frac{1}{k^2} \Exp_X \left[ \sum_{i = 1}^k \left( b(x, X^i) - \Exp_X b(x, X^i) \right) \right]^2 = \\
-    = \frac{1}{k^2} \sum_{i = 1}^k \Exp_X (b(x, X^i) - \Exp_X b(x, X^i))^2 + \\
-    + \frac{1}{k^2} \sum_{k_1 \ne k_2} \Exp_X \left[ \left( b(x, X^{k_1}) - \Exp_X b(x, X^{k_1}) \right) \left( b(x, X^{k_2}) - \Exp_X b(x, X^{k_2}) \right) \right] = \\
-    = \frac{1}{k^2} \sum_{i = 1}^k \Var_X b(x, X^i) + \frac{1}{k^2} \sum_{k_1 \ne k_2} \text{cov} \left( b(x, X^{k_1}), b(x, X^{k_2}) \right)
+  \begin{gather*}
+    \mathbb{V}\text{ar}_X[a(x, X)] = \mathbb{E}_X \left[ a(x, X) - \mathbb{E}_X[a(x, X)] \right]^2 = \\
+    = \mathbb{E}_X \left[ \frac{1}{k} \sum_{i = 1}^k b(x, X^i)- \mathbb{E}_X \left[ \frac{1}{k} \sum_{i = 1}^k b(x, X^i) \right] \right]^2 = \\
+    = \frac{1}{k^2} \mathbb{E}_X \left[ \sum_{i = 1}^k \left( b(x, X^i) - \mathbb{E}_X b(x, X^i) \right) \right]^2 = \\
+    = \frac{1}{k^2} \sum_{i = 1}^k \mathbb{E}_X (b(x, X^i) - \mathbb{E}_X b(x, X^i))^2 + \\
+    + \frac{1}{k^2} \sum_{k_1 \ne k_2} \mathbb{E}_X \left[ \left( b(x, X^{k_1}) - \mathbb{E}_X b(x, X^{k_1}) \right) \left( b(x, X^{k_2}) - \mathbb{E}_X b(x, X^{k_2}) \right) \right] = \\
+    = \frac{1}{k^2} \sum_{i = 1}^k \mathbb{V}\text{ar}_X b(x, X^i) + \frac{1}{k^2} \sum_{k_1 \ne k_2} \text{cov} \left( b(x, X^{k_1}), b(x, X^{k_2}) \right)
+  \end{gather*}
 $$
 
 
 Если предположить, что базовые алгоритмы некоррелированы, то:
 
 $$
-    \Var_X[a(x, X)] = \frac{1}{k^2} \sum_{i = 1}^k \Var_X b(x, X^i) = \\
-    = \frac{1}{k^2} \sum_{i = 1}^k \Var_X b(x, X) = \frac{1}{k} \Var_X b(x, X)
+  \begin{gather*}
+    \mathbb{V}\text{ar}_X[a(x, X)] = \frac{1}{k^2} \sum_{i = 1}^k \mathbb{V}\text{ar}_X b(x, X^i) = \\
+    = \frac{1}{k^2} \sum_{i = 1}^k \mathbb{V}\text{ar}_X b(x, X) = \frac{1}{k} \mathbb{V}\text{ar}_X b(x, X)
+  \end{gather*}
 $$
 
 Получилось, что в этом случае дисперсия композиции в $k$ раз меньше дисперсии отдельного алгоритма.
@@ -104,7 +104,7 @@ $$
     f(x) = x \sin x,
 $$
 
-и к ней добавляется нормальный шум $\eps \sim \mathcal{N}(0, 9)$.  Пример семпла из таких данных:
+и к ней добавляется нормальный шум $\mathbb{V}\text{ar}epsilon \sim \mathcal{N}(0, 9)$.  Пример семпла из таких данных:
 
 ![](./images/data_sample.png)
 
