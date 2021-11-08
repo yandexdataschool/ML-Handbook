@@ -18,6 +18,20 @@ module.exports = {
               overflowX: "scroll",
               background: "#f5f5f5",
               color: "#3b4856",
+            }
+            details: {
+              p: {
+                marginTop: 0,
+                marginBottom: 0,
+                paddingTop: "1.25em",
+                paddingBottom: "1.25em",
+              },
+              div: {
+                marginTop: 0,
+                marginBottom: 0,
+                paddingTop: "1.25em",
+                paddingBottom: "1.25em",
+              },
             },
           },
         },
