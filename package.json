@@ -12,7 +12,7 @@
     "prepare": "husky install",
     "test": "jest --watch",
     "test:ci": "jest --ci",
-    "predeploy": "next build && next export && cp .nojekyll out/.nojekyll",
+    "predeploy": "next build && next export && touch out/.nojekyll",
     "deploy": "gh-pages -b gh-pages -d out -t true"
   },
   "dependencies": {
