@@ -4,6 +4,7 @@ import Link from "next/link";
 import * as Styles from "./Main.styles";
 
 import logo from "../../public/images/shad-logo-full.png";
+import { imageLoader } from "../../utils/imageLoader";
 
 export type Chapter = {
   title: string;
@@ -57,7 +58,7 @@ export const Main = ({ sections }: Props) => {
       <div className="max-w-full flex flex-col align-middle">
         <h1 className="font-serif text-4xl py-4 text-center font-normal">Курс по теории машинного обучения</h1>
         <div className="mx-auto  max-w-full py-16">
-          <Image src={logo} alt="Логотип Школы Анализа Данных" />
+          <Image loader={imageLoader} src={logo} alt="Логотип Школы Анализа Данных" />
         </div>
         <p className="prose max-w-full font-sans text-xl py-16">
           Перед вами учебник по машинному обучению. Он состоит из двух частей — основного курса теории, который надлежит
