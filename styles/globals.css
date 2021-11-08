@@ -21,4 +21,10 @@
     margin-left: 5px;
     padding-left: 30px;
   }
+
+  .katex-display > .katex {
+    white-space: normal;
+    margin: 2em 0 2em 3em;
+    text-align: left;
+  }
 } ;
