@@ -50,6 +50,8 @@ export default function ArticlePage({ code, frontMatter, tableOfContents }: Prop
         <title>{frontMatter.title}</title>
         {frontMatter.description && <meta name="description" content={frontMatter.description} />}
         <meta property="og:type" content="article" />
+        <meta property="og:title" content={frontMatter.title} />
+        {frontMatter.description && <meta property="og:description" content={frontMatter.description} />}
       </Head>
       <HeaderArticle />
       <main className="container mx-auto flex">
