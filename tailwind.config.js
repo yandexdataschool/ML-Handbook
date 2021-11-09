@@ -13,6 +13,12 @@ module.exports = {
             h1: {
               fontFamily: ["'Yandex Serif', serif"],
             },
+            pre: {
+              paddingLeft: "57px",
+              overflowX: "scroll",
+              background: "#f5f5f5",
+              color: "#3b4856",
+            },
             details: {
               p: {
                 marginTop: 0,

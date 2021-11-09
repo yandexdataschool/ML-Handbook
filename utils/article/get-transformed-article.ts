@@ -3,6 +3,7 @@ import path from "path";
 /* Remark plugins */
 import remarkMath from "remark-math";
 import { remarkMdxImages } from "remark-mdx-images";
+import remarkGfm from "remark-gfm";
 
 /* Rehype plugins */
 import rehypeKatex from "rehype-katex";
@@ -33,7 +34,7 @@ export const getTransformedArticle = async (slug: string, content: string): Prom
   const { code, errors } = await bundleMDX(content, {
     cwd: postPath,
     xdmOptions: (options) => {
-      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkMath, remarkMdxImages];
+      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkMath, remarkMdxImages, remarkGfm];
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),
         rehypeSlug,
